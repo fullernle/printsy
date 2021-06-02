@@ -3,8 +3,6 @@ import {Route, Redirect, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util"
 
 import GreetingContainer from "./greeting/greeting_container";
-import LoginFormContainer from "./auth/login_form_container";
-import SignupFormContainer from "./auth/signup_form_container";
 import Modal from "./modal/modal"
 import Home from "./home/home"
 
@@ -13,7 +11,7 @@ const App = () => (
     <Modal />
     <header>
       <Link to="/" className="header-link">
-        <h1>Printsy</h1>
+        <h3>Printsy</h3>
       </Link>
       <GreetingContainer />
     </header>

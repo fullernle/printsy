@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { openModal, closeModal } from "../../actions/session_actions"
+import { openModal, closeModal } from "../../actions/modal_actions"
 
 const mSTP = (state) => ({
   errors: state.errors.session,
