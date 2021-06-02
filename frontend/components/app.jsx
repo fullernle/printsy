@@ -1,10 +1,11 @@
 import React from "react";
 import {Route, Redirect, Switch, Link } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from "../util/route_util"
 
 import GreetingContainer from "./greeting/greeting_container";
 import LoginFormContainer from "./auth/login_form_container";
 import SignupFormContainer from "./auth/signup_form_container";
-import HomeContainer from "./home/home_container"
+import Home from "./home/home"
 
 const App = () => (
   <div>
@@ -16,9 +17,9 @@ const App = () => (
     </header>
 
     <Switch>
-      <Route exact path="/login" component={LoginFormContainer} /> 
-      <Route exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/" component={HomeContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} /> 
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={Home} />
     </Switch>
 
   </div>
