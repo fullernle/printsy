@@ -4,17 +4,23 @@ import {Route, Redirect, Switch, Link } from 'react-router-dom';
 import GreetingContainer from "./greeting/greeting_container";
 import LoginFormContainer from "./auth/login_form_container";
 import SignupFormContainer from "./auth/signup_form_container";
-
+import HomeContainer from "./home/home_container"
 
 const App = () => (
   <div>
     <header>
-      <h1>Printsy</h1>
+      <Link to="/" className="header-link">
+        <h1>Printsy</h1>
+      </Link>
       <GreetingContainer />
     </header>
 
-    <Route path="/login" component={LoginFormContainer} /> 
-    <Route path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <Route exact path="/login" component={LoginFormContainer} /> 
+      <Route exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={HomeContainer} />
+    </Switch>
+
   </div>
 );
 
