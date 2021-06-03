@@ -60,12 +60,13 @@ class SessionForm extends React.Component {
       email = (
         <>
           <label>
-            Name:
+            <span className="modal-input-title">Name:</span>
+            <br />
             <input
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
-              className="signup-username"
+              className="login-input"
             />
           </label>
           <br />
@@ -82,12 +83,16 @@ class SessionForm extends React.Component {
         </div>
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.formType} {this.props.otherForm}
+          <header className="modal-header">
+            <span className="modal-title">{this.props.formType}</span>
+            <span>{this.props.otherForm}</span>
+          </header>
           {this.renderErrors()}
           <div className="login-form">
             <br />
             <label>
-              Email:
+              <span className="modal-input-title">Email:</span>
+              <br />
               <input
                 type="text"
                 value={this.state.email}
@@ -97,8 +102,9 @@ class SessionForm extends React.Component {
             </label>
             <br />
             {email}
-            <label>
-              Password:
+            <label className="modal-input-title">
+              <span className="modal-input-title">Password</span>
+              <br />
               <input
                 type="password"
                 value={this.state.password}
@@ -112,7 +118,9 @@ class SessionForm extends React.Component {
             <button className="session-submit">{this.props.formType}</button>
           </div>
         </form>
-        <button onClick={this.demoUser}>Demo Login</button>
+        <button className="demo-button" onClick={this.demoUser}>
+          Demo Login
+        </button>
       </div>
     );
   }

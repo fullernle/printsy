@@ -6,7 +6,7 @@ const TopNav = ({ currentUser, logout, openModal}) => {
   const loggedout = () => (
     <nav className="login-signup">
       <button className="login-button" onClick={() => openModal("login")}>
-        Login
+        Sign In
       </button>
     </nav>
   );
@@ -21,9 +21,9 @@ const TopNav = ({ currentUser, logout, openModal}) => {
   )
 
   return (
-    <nav className="top-nav-wrapper">
-      <Link to="/" className="home-logo">
-        <h3>Printsy</h3>
+    <nav className="top-nav">
+      <Link to="/" className="home-link">
+        <span className="home-logo">Printsy</span>
       </Link>
 
       <SearchBar /> 
