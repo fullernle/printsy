@@ -4,7 +4,8 @@ import SearchBar from "./search_bar"
 import DropDown from "./dropdown"
 
 const TopNav = ({ currentUser, logout, openModal}) => {
-  const loggedout = () => (
+  
+  const login_button = () => (
     <nav className="login-signup">
       <button className="login-button" onClick={() => openModal("login")}>
         Sign In
@@ -12,16 +13,7 @@ const TopNav = ({ currentUser, logout, openModal}) => {
     </nav>
   );
 
-
-  // return currentUser ? personalGreeting() : sessionLinks();
-
-  // const loggedin = () => (
-  //   <button className="header-button" onClick={logout}>
-  //         Log Out
-  //   </button>
-  // )
-
-  const loggedin = () => (
+  const dropdown_menu = () => (
     <DropDown user={currentUser} logout={logout} />
   )
 
@@ -33,7 +25,7 @@ const TopNav = ({ currentUser, logout, openModal}) => {
 
       <SearchBar /> 
 
-      {currentUser ? loggedin() : loggedout()}
+      {currentUser ? dropdown_menu() : login_button()}
 
     </nav>
   );
