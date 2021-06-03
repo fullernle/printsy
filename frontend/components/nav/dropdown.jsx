@@ -18,7 +18,8 @@ export default class DropDown extends React.Component {
     this.setState({ menuHidden: newState });
   }
 
-  closeMenu() {
+  closeMenu(e) {
+    e.preventDefault();
     this.setState({ menuHidden: true })
   }
 

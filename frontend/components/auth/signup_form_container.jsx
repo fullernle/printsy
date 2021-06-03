@@ -15,7 +15,8 @@ const mDTP = (dispatch) => ({
   otherForm: (
     <button
       className="modal-change-form"
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault();
         dispatch(openModal("login"))
         dispatch(resetSessionErrors())
       }}
