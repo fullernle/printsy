@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from "react";
 import { Link } from "react-router-dom";
-import { signup } from "../../actions/session_actions";
+import { resetSessionErrors, signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { openModal, closeModal } from "../../actions/modal_actions"
 
@@ -15,7 +15,10 @@ const mDTP = (dispatch) => ({
   otherForm: (
     <button
       className="modal-change-form"
-      onClick={() => dispatch(openModal("login"))}
+      onClick={() => {
+        dispatch(openModal("login"))
+        dispatch(resetSessionErrors())
+      }}
     >
       Login
     </button>
