@@ -29,6 +29,7 @@ header {
 .home-logo {
   font-size: 32px;
   color: rgb(12, 165, 165);
+  font-weight: 500;
 }
 
 .login-button {
@@ -46,4 +47,25 @@ header {
   padding: 10px;
   border-radius: 24px;
   transition: transform 2s ease-out, background 150ms ease-out
+}
+
+.close-x {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  right: -60px;
+  top: 0px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  color: white;
+  font-size: 24px;
+}
+
+.close-x:hover {
+  background-color: rgba(182, 182, 182, 0.541);
+  transition: 1s;
 }

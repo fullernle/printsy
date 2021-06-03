@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <div onClick={this.props.closeModal} className="close-x">
-          X
+          ✕
         </div>
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
             <br />
             {email}
             <label className="modal-input-title">
-              <span className="modal-input-title">Password</span>
+              <span className="modal-input-title">Password:</span>
               <br />
               <input
                 type="password"
