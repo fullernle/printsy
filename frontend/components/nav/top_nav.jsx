@@ -35,15 +35,3 @@ const TopNav = ({ currentUser, logout, openModal}) => {
 };
 
 export default TopNav;
-
-
-// const personalGreeting = () => (
-//   <hgroup className="greeting-group">
-//     <h2 className="greeting">
-//       Welcome to Printsy,{" "}
-//       {currentUser.username.charAt(0).toUpperCase() +
-//         currentUser.username.slice(1)}
-//       !
-//     </h2>
-//   </hgroup>
-// );
