@@ -12,7 +12,8 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
     "webpack": "^5.38.1",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "redux-thunk": "^2.3.0"
   },
   "description": "An etsy clone that specializes in buying and selling 3d printed items!",
   "version": "1.0.0",
