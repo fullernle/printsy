@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { resetSessionErrors, signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { openModal, closeModal } from "../../actions/modal_actions"
@@ -27,4 +27,4 @@ const mDTP = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(mSTP, mDTP)(SessionForm);
+export default withRouter(connect(mSTP, mDTP)(SessionForm));

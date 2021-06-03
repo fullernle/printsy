@@ -1,7 +1,10 @@
-import React from "react";
+import React from "react"
+import GreetingContainer from "./greeting_container"
 
-const Home = () => {
-  return <div></div>;
-};
+const Home = () => (
+  <div className="home-page">
+    <GreetingContainer />
+  </div>
+)
 
-export default Home;
+export default Home; 
