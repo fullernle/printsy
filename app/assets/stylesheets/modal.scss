@@ -37,7 +37,7 @@
   height: 38px;
   border-radius: 6px;
   margin-top: 8px;
-  transition: 0.3s;
+  transition: transform 100ms ease-out, background 150ms ease-out;
 }
 
 .login-input:hover {
@@ -65,11 +65,13 @@
 	outline: none;
   border-radius: 24px;
   font-size: 14px;
+  transition: all 50ms;
+
 }
 
 .modal-change-form:hover {
   border: black solid 2px;
-  transition: transform 2s ease-out
+  transform: scale(1.01);
 }
 
 .modal-title {
@@ -82,11 +84,13 @@
   border-radius: 24px;
   height: 48px;
   font-size: 16px;
-  border: none
+  border: none;
+  transition: 100ms;
 }
 
 .session-submit:hover {
   background-color: rgb(46, 46, 46);
+  transform: scale(1.05);
 }
 
 .demo-button {
@@ -98,8 +102,31 @@
   font-size: 16px;
   width: 100%;
   margin-top: 10px;
+  transition: 100ms;
 }
 
 .demo-button:hover {
   background-color: rgb(7, 104, 104);
+  transform: scale(1.05);
+}
+
+.close-x {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  right: -60px;
+  top: 0px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  color: white;
+  font-size: 24px;
+  transition: 100ms;
+}
+
+.close-x:hover {
+  background-color: rgba(182, 182, 182, 0.541);
 }

@@ -40,32 +40,26 @@ header {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-}
-
-.login-button:hover {
-  background-color: rgba(182, 182, 182, 0.541);
-  padding: 10px;
   border-radius: 24px;
-  transition: transform 2s ease-out, background 150ms ease-out
+  transition: transform 100ms ease-out, background 150ms ease-out;
 }
 
-.close-x {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  right: -60px;
-  top: 0px;
-  cursor: pointer;
-  padding: 10px;
+.nav-show-menu {
+  background: none;
+	color: inherit;
+	border: solid black 1px;
+  width: 40px;
+  height: 40px;
+	// padding: 10px 12px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  color: white;
-  font-size: 24px;
+  transition: transform 100ms ease-out, background 150ms ease-out;
 }
 
-.close-x:hover {
+.login-button:hover, .nav-show-menu:hover {
   background-color: rgba(182, 182, 182, 0.541);
-  transition: 1s;
+  transform: scale(1.1);
 }
+

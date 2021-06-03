@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "./search_bar"
+import DropDown from "./dropdown"
 
 const TopNav = ({ currentUser, logout, openModal}) => {
   const loggedout = () => (
@@ -14,10 +15,14 @@ const TopNav = ({ currentUser, logout, openModal}) => {
 
   // return currentUser ? personalGreeting() : sessionLinks();
 
+  // const loggedin = () => (
+  //   <button className="header-button" onClick={logout}>
+  //         Log Out
+  //   </button>
+  // )
+
   const loggedin = () => (
-    <button className="header-button" onClick={logout}>
-          Log Out
-    </button>
+    <DropDown user={currentUser} logout={logout} />
   )
 
   return (
