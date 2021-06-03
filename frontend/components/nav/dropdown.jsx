@@ -13,14 +13,12 @@ export default class DropDown extends React.Component {
   }
 
   showMenu(e) {
-    console.log("CALLING OPEN MENU");
     e.preventDefault();
     let newState = !this.state.menuHidden
     this.setState({ menuHidden: newState });
   }
 
   closeMenu() {
-    console.log("CALLING CLOSE MENU");
     this.setState({ menuHidden: true })
   }
 

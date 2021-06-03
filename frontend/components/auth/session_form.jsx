@@ -48,9 +48,9 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
-  
+
   demoUser() {
-    let demoUser = {email: 'demo@demo.com', password: '123123' }
+    let demoUser = { email: "demo@demo.com", password: "123123" };
     this.props.processForm(demoUser).then(() => this.props.closeModal());
   }
 
@@ -73,7 +73,6 @@ class SessionForm extends React.Component {
         </>
       );
     }
-
 
     // if (this.props.errors.length === 0 ) this.props.closeModal();
     return (
@@ -114,13 +113,17 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-
             <button className="session-submit">{this.props.formType}</button>
           </div>
         </form>
-        <button className="demo-button" onClick={this.demoUser}>
-          Demo Login
-        </button>
+        { 
+          this.props.formType === "Sign In" ? (
+              <button className="demo-button" onClick={this.demoUser}>
+                Demo Login
+              </button>
+            ) : null
+        }
+        
       </div>
     );
   }
