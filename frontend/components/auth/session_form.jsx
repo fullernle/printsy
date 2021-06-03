@@ -19,6 +19,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.demoUser = this.demoUser.bind(this);
   }
 
   update(field) {
@@ -31,12 +32,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    this.props.closeModal();
+    this.props.processForm(user).then(() => this.props.closeModal());
   }
 
   handleEnter(e) {
-    if (e.key === 'Enter') this.handleSubmit(e);
+    if (e.key === "Enter") this.handleSubmit(e);
   }
 
   renderErrors() {
@@ -48,10 +48,15 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+  
+  demoUser() {
+    let demoUser = {username: 'demo', password: '123123' }
+    this.props.processForm(demoUser).then(() => this.props.closeModal());
+  }
 
   render() {
     let email = "";
-    if (this.props.formType === "signup") {
+    if (this.props.formType === "Register") {
       email = (
         <>
           <label>
@@ -67,13 +72,17 @@ class SessionForm extends React.Component {
         </>
       );
     }
+
+
+    // if (this.props.errors.length === 0 ) this.props.closeModal();
     return (
       <div className="login-form-container">
+        <div onClick={this.props.closeModal} className="close-x">
+          X
+        </div>
+
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Please {this.props.formType} or {this.props.otherForm}
-          <div onClick={this.props.closeModal} className="close-x">
-            X
-          </div>
+          {this.props.formType} {this.props.otherForm}
           {this.renderErrors()}
           <div className="login-form">
             <br />
@@ -103,6 +112,7 @@ class SessionForm extends React.Component {
             <button className="session-submit">{this.props.formType}</button>
           </div>
         </form>
+        <button onClick={this.demoUser}>Demo Login</button>
       </div>
     );
   }

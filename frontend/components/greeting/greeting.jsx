@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Greeting = ({ currentUser, logout, openModal }) => {
+const Greeting = ({ currentUser, logout, openModal, closeModal }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <button className="login-button" onClick={() => openModal("login")}>
@@ -24,6 +24,12 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     </hgroup>
   );
 
+  // if (currentUser) {
+  //   closeModal();
+  //   return personalGreeting();
+  // } else {
+  //   return sessionLinks();
+  // }
   return currentUser ? personalGreeting() : sessionLinks();
 };
 

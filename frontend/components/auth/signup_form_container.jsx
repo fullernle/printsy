@@ -7,7 +7,7 @@ import { openModal, closeModal } from "../../actions/modal_actions"
 
 const mSTP = (state) => ({
   errors: state.errors.session,
-  formType: "signup",
+  formType: "Register",
 });
 
 const mDTP = (dispatch) => ({
