@@ -11,7 +11,6 @@ const Greeting = ({ currentUser }) => {
     </hgroup>
   );
 
-  console.log(currentUser);
   return currentUser ? personalGreeting() : "";
 };
 

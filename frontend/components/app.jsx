@@ -14,12 +14,13 @@ const App = () => (
       <TopNavContainer />
     </header>
 
-    <section>
+    {/* <section>
       <GreetingContainer />
-    </section>
+    </section> */}
 
     <Switch>
-      <Route exact path="/" component={Home} />
+      <ProtectedRoute exact path="/home" component={Home} />
+      <Route exact path="/" component={GreetingContainer} />
       <Redirect to="/" />
     </Switch>
 
