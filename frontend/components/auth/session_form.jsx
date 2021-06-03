@@ -6,14 +6,14 @@ class SessionForm extends React.Component {
 
     if (this.props.formType === "login") {
       this.state = {
-        username: "",
+        email: "",
         password: "",
       };
     } else {
       this.state = {
-        username: "",
-        password: "",
         email: "",
+        password: "",
+        username: "",
       };
     }
 
@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
   }
   
   demoUser() {
-    let demoUser = {username: 'demo', password: '123123' }
+    let demoUser = {email: 'demo@demo.com', password: '123123' }
     this.props.processForm(demoUser).then(() => this.props.closeModal());
   }
 
@@ -60,12 +60,12 @@ class SessionForm extends React.Component {
       email = (
         <>
           <label>
-            Email:
+            Name:
             <input
               type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              className="signup-email"
+              value={this.state.username}
+              onChange={this.update("username")}
+              className="signup-username"
             />
           </label>
           <br />
@@ -87,11 +87,11 @@ class SessionForm extends React.Component {
           <div className="login-form">
             <br />
             <label>
-              Username:
+              Email:
               <input
                 type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
+                value={this.state.email}
+                onChange={this.update("email")}
                 className="login-input"
               />
             </label>
