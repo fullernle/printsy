@@ -8,39 +8,36 @@ export default class DropDown extends React.Component {
       menuHidden: true,
     };
 
-    this._isMounted = false;
-
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(e) {
+    console.log("CALLING OPEN MENU");
     e.preventDefault();
     let newState = !this.state.menuHidden
     this.setState({ menuHidden: newState });
-    window.removeEventListener('click', this.closeMenu)
   }
 
   closeMenu() {
-    // let newState = !this.state.menuHidden;
+    console.log("CALLING CLOSE MENU");
     this.setState({ menuHidden: true })
   }
 
   componentDidUpdate() {
-    const { isMenuHidden } = this.state;
-    this._isMounted = true;
-    
-    this._isMounted && setTimeout(() => {
-      if (isMenuHidden) {
+
+    setTimeout(() => {
+      if (this.state.menuHidden === true) {
         window.removeEventListener("click", this.closeMenu);
       } else {
         window.addEventListener("click", this.closeMenu);
       }
     }, 0);
+
   }
 
   componentWillUnmount() {
-    this._isMounted = false;
+    window.removeEventListener('click', this.closeMenu);
   }
 
   render() {
