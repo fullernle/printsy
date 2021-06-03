@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "./reset.scss";
-@import "./top_nav.scss";
-@import "./modal.scss";
+ @import "./reset.scss";
+ @import "./variables.scss";
+ @import "./top_nav.scss";
+ @import "./modal.scss";
