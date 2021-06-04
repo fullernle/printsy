@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
   attr_reader :password 
 
@@ -6,6 +18,17 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}, allow_nil: true 
 
   before_validation :ensure_session_token 
+
+  has_many :reviews,
+    foreign_key: :reviewer_id,
+    class_name: :Review
+
+  has_one :cart 
+
+  has_many :products_in_cart, 
+    through: :cart, 
+    source: :cart_items
+
 
   #G-PERCS
 
