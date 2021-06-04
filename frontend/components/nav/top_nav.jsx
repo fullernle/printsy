@@ -22,7 +22,7 @@ const TopNav = ({ currentUser, logout, openModal}) => {
       <Link to="/" className="home-link">
         <span className="home-logo">Printsy</span>
       </Link>
-
+      <div className="placeholder"></div>
       <SearchBar /> 
 
       {currentUser ? dropdown_menu() : login_button()}

@@ -1,72 +1,160 @@
 @import "./variables.scss";
 
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  padding: 36px 12px;
-  max-width: 1400px;
-  margin: auto;
-  align-items: center;
+@media(min-width: 900px) {
+  .top-nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 36px 12px;
+    max-width: 1400px;
+    margin: auto;
+    align-items: center;
+  }
+
+  header {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .search-section {
+    width: 80%;
+    border-radius: 25%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+  .home-link {
+    width: 120px;
+    height: 40px;
+  }
+  .home-logo {
+    font-size: 40px;
+    color: $main-color;
+    font-weight: 500;
+  }
+
+  .login-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 10px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 24px;
+    transition: transform 100ms ease-out, background 150ms ease-out;
+  }
+
+  .nav-show-menu {
+    background: none;
+    color: inherit;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+    // padding: 10px 12px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 50%;
+    transition: transform 100ms ease-out, background 150ms ease-out;
+  }
+
+  .login-button:hover,
+  .nav-show-menu:hover {
+    background-color: rgba(182, 182, 182, 0.541);
+    transform: scale(1.01);
+  }
+
+  .nav-menu {
+    z-index: 2;
+    position: absolute;
+    margin-top: 10px;
+  }
 }
 
-header {
-  max-width: 1400px;
-  margin: auto;
-}
+@media(max-width: 900px) {
+  .top-nav {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50px 50px; 
+    grid-template-areas: 
+      "logo placeholder placeholder signin"
+      "search search search search";
+    justify-items: center;
+    padding: 36px 12px;
+    margin: auto;
+  }
 
-.search-section {
-  width: 80%;
-  border-radius: 25%;
-}
+  .placeholder {
+    grid-area: placeholder;
+  }
 
-.search-bar {
-  width: 100%
-}
-.home-link {
-  width: 80px;
-  height: 40px;
-}
-.home-logo {
-  font-size: 32px;
-  color: $main-color;
-  font-weight: 500;
-}
+  header {
+    width: auto;
+    margin: auto;
+  }
 
-.login-button {
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 10px;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-  border-radius: 24px;
-  transition: transform 100ms ease-out, background 150ms ease-out;
-}
+  .search-section {
+    width: 80%;
+    border-radius: 25%;
+    grid-area: search;
+  }
+  
+  .search-bar {
+    width: 100%;
+  }
 
-.nav-show-menu {
-  background: none;
-	color: inherit;
-	border: solid black 1px;
-  width: 40px;
-  height: 40px;
-	// padding: 10px 12px;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-  border-radius: 50%;
-  transition: transform 100ms ease-out, background 150ms ease-out;
-}
+  .home-link {
 
-.login-button:hover, .nav-show-menu:hover {
-  background-color: rgba(182, 182, 182, 0.541);
-  transform: scale(1.01);
-}
+    width: 80px;
+    height: 40px;
+  }
+  .home-logo {
+    grid-area: logo;
+    font-size: 40px;
+    color: $main-color;
+    font-weight: 500;
+  }
 
-.nav-menu {
-  z-index: 2;
-  position: absolute;
-  margin-top: 10px;
+  .login-button {
+    grid-area: signin;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 10px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 24px;
+    transition: transform 100ms ease-out, background 150ms ease-out;
+  }
+
+  .nav-show-menu {
+    background: none;
+    color: inherit;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+    // padding: 10px 12px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 50%;
+    transition: transform 100ms ease-out, background 150ms ease-out;
+  }
+
+  .login-button:hover,
+  .nav-show-menu:hover {
+    background-color: rgba(182, 182, 182, 0.541);
+    transform: scale(1.01);
+  }
+
+  .nav-menu {
+    z-index: 2;
+    position: absolute;
+    margin-top: 10px;
+  }
+
 }

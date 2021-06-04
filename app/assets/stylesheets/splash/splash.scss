@@ -1,0 +1,11 @@
+@import "../variables.scss";
+
+.splash-special {
+  position: relative;
+  background-color: $main-color;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30vh;
+  max-height: 80vh;
+}
