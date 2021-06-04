@@ -4,7 +4,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    if (this.props.formType === "login") {
+    if (this.props.formType === "Sign In") {
       this.state = {
         email: "",
         password: "",
@@ -61,9 +61,9 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let email = "";
+    let username = "";
     if (this.props.formType === "Register") {
-      email = (
+      username = (
         <>
           <label>
             <span className="modal-input-title">Name:</span>
@@ -106,7 +106,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            {email}
+            {username}
             <label className="modal-input-title">
               <span className="modal-input-title">Password:</span>
               <br />
