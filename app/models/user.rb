@@ -31,6 +31,10 @@ class User < ApplicationRecord
     through: :cart, 
     source: :cart_items
 
+  has_many :items_for_sale, 
+    foreign_key: :seller_id, 
+    class_name: :Product
+
 
   #G-PERCS
 

@@ -13,13 +13,13 @@
 class Product < ApplicationRecord
   validates :name, :description, :price, :seller_id, presence: true 
 
-  has_one :product_category, 
+  has_many :product_category, 
     foreign_key: :product_id, 
-    class_name: :ProductCategory,
+    class_name: :ProductCategory
 
   has_many :categories, 
     through: :product_category,
-    source: :categories
+    source: :category
     
   belongs_to :seller, 
     foreign_key: :seller_id,
