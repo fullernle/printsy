@@ -6,6 +6,7 @@ import Splash from "./splash/splash"
 import TopNavContainer from "./nav/top_nav_container";
 import Modal from "./modal/modal"
 import Home from "./home/home"
+import ProductContainer from "./product/product_container"
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/home" component={Home} />
       <Route exact path="/" component={Splash} />
+      <Route path="/products/:id" component={ProductContainer} />
       <Redirect to="/" />
     </Switch>
 
