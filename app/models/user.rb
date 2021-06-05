@@ -23,7 +23,9 @@ class User < ApplicationRecord
     foreign_key: :reviewer_id,
     class_name: :Review
 
-  has_one :cart 
+  has_one :cart,
+    foreign_key: :user_id, 
+    class_name: :Cart 
 
   has_many :products_in_cart, 
     through: :cart, 

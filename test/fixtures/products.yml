@@ -6,7 +6,6 @@
 #  name        :string           not null
 #  description :string           not null
 #  price       :integer          not null
-#  category_id :integer          not null
 #  seller_id   :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
