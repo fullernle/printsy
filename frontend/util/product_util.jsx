@@ -10,3 +10,9 @@ export const showProduct = (productId) =>
     method: "GET",
     url: `/api/products/${productId}`,
   });
+
+export const allProducts = () => 
+  $.ajax({
+    method: "GET",
+    url: "/api/products"
+  })
