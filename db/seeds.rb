@@ -72,6 +72,7 @@ p1 = Product.create(
 
 ProductCategory.create(product_id: 1, category_id: 5)
 ProductCategory.create(product_id: 1, category_id: 6)
+p1.photo.attach(io: URI.open("s3://printsy-dev/seed/1.png"), filename: "1.png")
 
 p2 = Product.create(
   name: "Baby Groot", 
@@ -82,6 +83,8 @@ p2 = Product.create(
 ProductCategory.create(product_id: 2, category_id: 5)
 ProductCategory.create(product_id: 2, category_id: 6)
 ProductCategory.create(product_id: 2, category_id: 7)
+p2.photo.attach(io: URI.open("s3://printsy-dev/seed/2.png"), filename: "2.png")
+
 
 p3 = Product.create(
   name: "Bow Tie", 
@@ -90,6 +93,7 @@ p3 = Product.create(
   seller_id: 2)
 
 ProductCategory.create(product_id: 3, category_id: 2)
+p3.photo.attach(io: URI.open("s3://printsy-dev/seed/3.png"), filename: "3.png")
 
 p4 = Product.create(
   name: "Bracelet", 
@@ -98,6 +102,7 @@ p4 = Product.create(
   seller_id: 2)
 
 ProductCategory.create(product_id: 4, category_id: 2)
+p4.photo.attach(io: URI.open("s3://printsy-dev/seed/4.png"), filename: "4.png")
 
 p5 = Product.create(
   name: "Bubble Necklace", 
@@ -106,6 +111,7 @@ p5 = Product.create(
   seller_id: 2 )
 
 ProductCategory.create(product_id: 5, category_id: 2)
+p5.photo.attach(io: URI.open("s3://printsy-dev/seed/5.png"), filename: "5.png")
 
 p6 = Product.create(
   name: "Cell Lamp", 
@@ -115,6 +121,7 @@ p6 = Product.create(
 
 ProductCategory.create(product_id: 6, category_id: 4)
 ProductCategory.create(product_id: 6, category_id: 7)
+p6.photo.attach(io: URI.open("s3://printsy-dev/seed/6.png"), filename: "6.png")
 
 p7 = Product.create(
   name: "Chainmail", 
@@ -124,6 +131,7 @@ p7 = Product.create(
 
 ProductCategory.create(product_id: 7, category_id: 2)
 ProductCategory.create(product_id: 7, category_id: 1)
+p7.photo.attach(io: URI.open("s3://printsy-dev/seed/7.png"), filename: "7.png")
 
 p8 = Product.create(
   name: "Deadpool Bust", 
@@ -134,6 +142,7 @@ p8 = Product.create(
 ProductCategory.create(product_id: 8, category_id: 7)
 ProductCategory.create(product_id: 8, category_id: 4)
 ProductCategory.create(product_id: 8, category_id: 6)
+p8.photo.attach(io: URI.open("s3://printsy-dev/seed/8.png"), filename: "8.png")
 
 p9 = Product.create(
   name: "Deer Wall Art", 
@@ -143,6 +152,7 @@ p9 = Product.create(
 
 ProductCategory.create(product_id: 9, category_id: 4)
 ProductCategory.create(product_id: 9, category_id: 7)
+p9.photo.attach(io: URI.open("s3://printsy-dev/seed/9.png"), filename: "9.png")
 
 p10 = Product.create(
   name: "DVA Necklace", 
@@ -151,6 +161,7 @@ p10 = Product.create(
 
 ProductCategory.create(product_id: 10, category_id: 1)
 ProductCategory.create(product_id: 10, category_id: 6)
+p10.photo.attach(io: URI.open("s3://printsy-dev/seed/10.png"), filename: "10.png")
 
 p11 = Product.create(
   name: "Ghost Decoration", 
@@ -159,6 +170,7 @@ p11 = Product.create(
   seller_id: 5)
 
 ProductCategory.create(product_id: 11, category_id: 4)
+p11.photo.attach(io: URI.open("s3://printsy-dev/seed/11.png"), filename: "11.png")
 
 p12 = Product.create(
   name: "Poly Hat", 
@@ -167,6 +179,7 @@ p12 = Product.create(
   seller_id: 6)
 
 ProductCategory.create(product_id: 12, category_id: 2)
+p12.photo.attach(io: URI.open("s3://printsy-dev/seed/12.png"), filename: "12.png")
 
 p13 = Product.create(
   name: "Headphone Stand", 
@@ -175,6 +188,7 @@ p13 = Product.create(
   seller_id: 6)
 
 ProductCategory.create(product_id: 13, category_id: 8)
+p13.photo.attach(io: URI.open("s3://printsy-dev/seed/13.png"), filename: "13.png")
 
 p14 = Product.create(
   name: "Hex Storage", 
@@ -184,6 +198,7 @@ p14 = Product.create(
 
 ProductCategory.create(product_id: 14, category_id: 8)
 ProductCategory.create(product_id: 14, category_id: 4)
+p14.photo.attach(io: URI.open("s3://printsy-dev/seed/14.png"), filename: "14.png")
 
 p15 = Product.create(
   name: "Kirby Exhaust", 
@@ -193,6 +208,7 @@ p15 = Product.create(
 
 ProductCategory.create(product_id: 15, category_id: 8)
 ProductCategory.create(product_id: 15, category_id: 6)
+p15.photo.attach(io: URI.open("s3://printsy-dev/seed/15.png"), filename: "15.png")
 
 p16 = Product.create(
   name: "Custom Light Switch", 
@@ -201,6 +217,7 @@ p16 = Product.create(
   seller_id: 7)
 
 ProductCategory.create(product_id: 16, category_id: 4)
+p16.photo.attach(io: URI.open("s3://printsy-dev/seed/16.png"), filename: "16.png")
 
 p17 = Product.create(
   name: "Mario Planters", 
@@ -210,6 +227,7 @@ p17 = Product.create(
 
 ProductCategory.create(product_id: 17, category_id: 6)
 ProductCategory.create(product_id: 17, category_id: 4)
+p17.photo.attach(io: URI.open("s3://printsy-dev/seed/17.png"), filename: "17.png")
 
 p18 = Product.create(
   name: "Mini Catapault", 
@@ -218,6 +236,7 @@ p18 = Product.create(
   seller_id: 4)
 
 ProductCategory.create(product_id: 18, category_id: 5)
+p18.photo.attach(io: URI.open("s3://printsy-dev/seed/18.png"), filename: "18.png")
 
 p19 = Product.create(
   name: "Moon Lamp", 
@@ -227,6 +246,7 @@ p19 = Product.create(
 
 ProductCategory.create(product_id: 19, category_id: 4)
 ProductCategory.create(product_id: 19, category_id: 7)
+p19.photo.attach(io: URI.open("s3://printsy-dev/seed/19.png"), filename: "19.png")
 
 p20 = Product.create(
   name: "Music Necklace", 
@@ -235,6 +255,7 @@ p20 = Product.create(
   seller_id: 1)
 
 ProductCategory.create(product_id: 20, category_id: 1)
+p20.photo.attach(io: URI.open("s3://printsy-dev/seed/20.png"), filename: "20.png")
 
 p21 = Product.create(
   name: "Octopus Toy", 
@@ -243,6 +264,7 @@ p21 = Product.create(
   seller_id: 1)
 
 ProductCategory.create(product_id: 21, category_id: 5)
+p21.photo.attach(io: URI.open("s3://printsy-dev/seed/21.png"), filename: "21.png")
 
 p22 = Product.create(
   name: "Wall Planter Decor", 
@@ -252,6 +274,7 @@ p22 = Product.create(
 
 ProductCategory.create(product_id: 22, category_id: 4)
 ProductCategory.create(product_id: 22, category_id: 8)
+p22.photo.attach(io: URI.open("s3://printsy-dev/seed/22.png"), filename: "22.png")
 
 p23 = Product.create(
   name: "3D Puzzle", 
@@ -260,6 +283,7 @@ p23 = Product.create(
   seller_id: 2)
 
 ProductCategory.create(product_id: 23, category_id: 5)
+p23.photo.attach(io: URI.open("s3://printsy-dev/seed/23.png"), filename: "23.png")
 
 p24 = Product.create(
   name: "Tealight Holder", 
@@ -268,6 +292,7 @@ p24 = Product.create(
   seller_id:4 )
 
 ProductCategory.create(product_id: 24, category_id: 4)
+p24.photo.attach(io: URI.open("s3://printsy-dev/seed/24.png"), filename: "24.png")
 
 p25 = Product.create(
   name: "Hex Tie", 
@@ -276,6 +301,7 @@ p25 = Product.create(
   seller_id: 4)
 
 ProductCategory.create(product_id: 25, category_id: 2)
+p25.photo.attach(io: URI.open("s3://printsy-dev/seed/25.png"), filename: "25.png")
 
 p26 = Product.create(
   name: "Universal Mount", 
@@ -284,6 +310,7 @@ p26 = Product.create(
   seller_id: 5)
 
 ProductCategory.create(product_id: 26, category_id: 8)
+p26.photo.attach(io: URI.open("s3://printsy-dev/seed/26.png"), filename: "26.png")
 
 p27 = Product.create(
   name: "Artsy Vase", 
@@ -293,6 +320,7 @@ p27 = Product.create(
 
 ProductCategory.create(product_id: 27, category_id: 7)
 ProductCategory.create(product_id: 27, category_id: 4)
+p27.photo.attach(io: URI.open("s3://printsy-dev/seed/27.png"), filename: "27.png")
 
 p28 = Product.create(
   name: "Whistle", 
@@ -302,6 +330,7 @@ p28 = Product.create(
 
 ProductCategory.create(product_id: 28, category_id: 5)
 ProductCategory.create(product_id: 28, category_id: 8)
+p28.photo.attach(io: URI.open("s3://printsy-dev/seed/28.png"), filename: "28.png")
 
 p29 = Product.create(
   name: "Wind Helix Decor", 
@@ -311,6 +340,7 @@ p29 = Product.create(
 
 ProductCategory.create(product_id: 29, category_id: 4)
 ProductCategory.create(product_id: 29, category_id: 7)
+p29.photo.attach(io: URI.open("s3://printsy-dev/seed/29.png"), filename: "29.png")
 
 p30 = Product.create(
   name: "Full Shoe Rack", 
@@ -320,6 +350,7 @@ p30 = Product.create(
 
 ProductCategory.create(product_id: 30, category_id: 4)
 ProductCategory.create(product_id: 30, category_id: 3)
+p30.photo.attach(io: URI.open("s3://printsy-dev/seed/30.png"), filename: "30.png")
 
 p31 = Product.create(
   name: "Shoe Organizer", 
@@ -329,6 +360,7 @@ p31 = Product.create(
 
 ProductCategory.create(product_id: 31, category_id: 4)
 ProductCategory.create(product_id: 31, category_id: 3)
+p31.photo.attach(io: URI.open("s3://printsy-dev/seed/31.png"), filename: "31.png")
 
 p32 = Product.create(
   name: "Quick Shoe Ties", 
@@ -338,6 +370,7 @@ p32 = Product.create(
 
 ProductCategory.create(product_id: 32, category_id: 4)
 ProductCategory.create(product_id: 32, category_id: 3)
+p32.photo.attach(io: URI.open("s3://printsy-dev/seed/32.png"), filename: "32.png")
 
 p33 = Product.create(
   name: "Wall Mounted Shoe Rack", 
@@ -347,8 +380,20 @@ p33 = Product.create(
 
 ProductCategory.create(product_id: 33, category_id: 4)
 ProductCategory.create(product_id: 33, category_id: 3)
+p33.photo.attach(io: URI.open("s3://printsy-dev/seed/33.png"), filename: "33.png")
 
 
+p34 = Product.create(
+  name: "Witcher Necklace",
+  description: "White wolf medallion!",
+  price: 10.99,
+  seller_id: 4
+)
+
+
+ProductCategory.create(product_id: 34, category_id: 1)
+ProductCategory.create(product_id: 34, category_id: 6)
+p34.photo.attach(io: URI.open("s3://printsy-dev/seed/34.png"), filename: "34.png")
 
 cart1 = Cart.create(user_id: 1)
 cart2 = Cart.create(user_id: 2)
