@@ -4,7 +4,7 @@ export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const RECEIVE_PRODUCT_ERRORS = "RECEIVE_PRODUCT_ERRORS";
 
-export const receiveCurrentProduct = (product) => ({
+export const receiveProduct = (product) => ({
   type: RECEIVE_PRODUCT,
   product,
 });
@@ -19,8 +19,8 @@ export const receiveProductErrors = (errors) => ({
   errors,
 });
 
-export const fetchProduct = (product) => (dispatch) =>
-  APIUtil.createProduct(product).then(
+export const fetchProduct = (productId) => (dispatch) =>
+  APIUtil.showProduct(productId).then(
     (product) => dispatch(receiveProduct(product)),
     (errors) => dispatch(receiveProductErrors(errors.responseJSON))
   );
@@ -28,5 +28,11 @@ export const fetchProduct = (product) => (dispatch) =>
 export const fetchProducts = () => (dispatch) =>
   APIUtil.allProducts().then(
     (product) => dispatch(receiveProducts(product)),
+    (errors) => dispatch(receiveProductErrors(errors.responseJSON))
+  );
+
+export const createProduct = (product) => (dispatch) =>
+  APIUtil.createProduct(product).then(
+    (product) => dispatch(receiveProduct(product)),
     (errors) => dispatch(receiveProductErrors(errors.responseJSON))
   );

@@ -13,12 +13,12 @@ const productReducer = (state = {}, action) => {
         [action.product.id]: action.product,
       });
 
-    case RECEIVE_PRODUCTS: 
-      return action.products 
+    case RECEIVE_PRODUCTS:
+      return action.products;
 
     case RECEIVE_PRODUCT_ERRORS:
-      return action.errors 
-      
+      return action.errors;
+
     default:
       return state;
   }

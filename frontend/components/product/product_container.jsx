@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
-import { fetchProducts } from "../../actions/product_actions";
+import { fetchProduct } from "../../actions/product_actions";
+import Product from "./product";
 
-import ProductIndex from "./product_index";
-
-const mSTP = (state) => ({
-  products: Object.values(state.entities.products),
+const mSTP = (state, ownProps) => ({
+  product: state.entities.products[ownProps.match.params.id],
 });
 
 const mDTP = (dispatch) => ({
-  fetchProducts: () => dispatch(fetchProducts()),
+  fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
-export default connect(mSTP, mDTP)(ProductIndex);
+export default connect(mSTP, mDTP)(Product);
