@@ -2,6 +2,7 @@ import React from "react";
 import SplashProduct from "./splash_product";
 import GreetingContainer from "../home/greeting_container";
 import SplashCategory from "./splash_category";
+import ProductListing from "../product/product_listing";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Splash extends React.Component {
 
   componentDidMount() {
     // this.props.fetchCategories();
-    this.props.fetchProducts().then(() => this.props.fetchCategories());
+    // this.props.fetchProducts().then(() => this.props.fetchCategories());
+    this.props.fetchProducts();
   }
 
   generateSpecial() {
@@ -69,7 +71,7 @@ class Splash extends React.Component {
 
     if (this.props.products.length > 6) {
       special = this.generateSpecial();
-      // popular = this.generateRandom();
+      popular = this.generateRandom();
       // discover = this.generateRandom();
       // selections = this.generateRandom();
     }
@@ -79,11 +81,7 @@ class Splash extends React.Component {
     } else {
       return (
         <div className="splash-wrapper">
-          {this.props.currentUser ? (
-            <GreetingContainer  />
-          ) : (
-            ""
-          )}
+          {this.props.currentUser ? <GreetingContainer /> : ""}
 
           <div className="special-background">
             <h1 className="special-header">
@@ -107,16 +105,19 @@ class Splash extends React.Component {
           </div>
 
           <div className="splash-popular">
-            {popular === null
-              ? ""
-              : popular.map((product, i) => (
-                  <SplashProduct
-                    className={`popular-item-link-${i + 1}`}
-                    product={product}
-                    index={i}
-                    key={product.id}
-                  />
-                ))}
+            <h2 className="popular-header">Popular gifts right now</h2>
+            <div className="popular-list">
+              {popular === null
+                ? ""
+                : popular.map((product, i) => (
+                    <ProductListing
+                      className={`popular-item-link-${i + 1}`}
+                      product={product}
+                      index={i}
+                      key={product.id}
+                    />
+                  ))}
+            </div>
           </div>
 
           <div className="splash-discover">

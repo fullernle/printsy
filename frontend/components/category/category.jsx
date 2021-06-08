@@ -1,5 +1,5 @@
 import React from "react";
-import SplashProduct from "../splash/splash_product";
+import ProductListing from "../product/product_listing";
 export default class Category extends React.Component {
   constructor(props) {
     super(props);
@@ -18,12 +18,10 @@ export default class Category extends React.Component {
       let products = Object.values(this.props.category.products);
       return (
         <div className="category-page">
-          <div>
-            sidebar placeholder
-          </div>
+          <div>sidebar placeholder</div>
           <div className="products-list">
             {products.map((product) => (
-              <SplashProduct
+              <ProductListing
                 className="category-index-item"
                 key={product.id}
                 product={product}
