@@ -1,5 +1,6 @@
 import React from "react";
 import { showProduct } from "../../util/product_util";
+import ProductDropDown from "./product_dropdown";
 
 export default class Product extends React.Component {
   constructor(props) {
@@ -41,9 +42,14 @@ export default class Product extends React.Component {
 
             <div className="product-title">{product.name}</div>
 
-            <div className="product-price">${product.price}</div>
+            <div className="price-stock">
+              <div className="product-price">${parseFloat(product.price)}</div>
+
+              <div className="product-stock">In Stock</div>
+            </div>
             <div className="product-quantity">
-              <select name="product">
+              <span className="quantity-title">Quantity</span>
+              <select className="quantity" name="product">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -57,34 +63,43 @@ export default class Product extends React.Component {
               </select>
             </div>
 
-            <div>
+            {/* <div>
               <button className="buy-it-now">Buy It Now</button>
-            </div>
+            </div> */}
             <div>
               <button className="add-to-cart">Add to Cart</button>
             </div>
             <div className="product-wants">
-              <strong>Other people want this.</strong> {randomWants} people have this in their carts right now.
+              <div className="shopping-cart">🛒</div>
+              <div>
+                Other people want this. Over {randomWants} people have this in
+                their carts right now.
+              </div>
             </div>
             <div className="arrives-by">
-              Arrives by tomorrow if you order today. Hooray! This item ships
-              free.
+              <div>🚚</div>
+              <div>
+                Arrives by tomorrow if you order today. Hooray! This item ships
+                free.
+              </div>
             </div>
 
             <div className="product-highlights">
-              <h4>Highlights:</h4>
+              <ProductDropDown title="Highlights" content="Hand made!" />
             </div>
 
             <div className="product-description">
-              <h4>Description:</h4>
-              {product.description}
+              <ProductDropDown
+                title="Description"
+                content={product.description}
+              />
             </div>
 
             <div className="seller">
-              Meet your seller 
-              <div className="seller-link">
-                
-              </div>
+              <ProductDropDown
+                title="Meet Your Seller"
+                content={product.seller}
+              />
             </div>
           </div>
         </div>

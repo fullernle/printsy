@@ -14,4 +14,7 @@ class Category < ApplicationRecord
     foreign_key: :category_id,
     class_name: :ProductCategory 
 
+  has_many :products, 
+    through: :product_categories, 
+    source: :product
 end
