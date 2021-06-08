@@ -26,11 +26,12 @@
     width: 100%;
   }
   .home-link {
-    width: 120px;
-    height: 40px;
+    width: 150px;
+    height: 60px;
   }
   .home-logo {
-    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
     color: $main-color;
     font-weight: 500;
   }
@@ -100,6 +101,7 @@
     width: 80%;
     border-radius: 25%;
     grid-area: search;
+    align-self:center;
   }
   
   .search-bar {
@@ -108,18 +110,24 @@
 
   .home-link {
 
-    width: 80px;
-    height: 40px;
+    width: 150px;
+    height: 60px;
   }
   .home-logo {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     grid-area: logo;
-    font-size: 40px;
+    font-size: 50px;
     color: $main-color;
     font-weight: 500;
+    alignt-self:center;
+  }
+
+  .login-signup {
+    grid-area: signin;
+    align-self: center;
   }
 
   .login-button {
-    grid-area: signin;
     background: none;
     color: inherit;
     border: none;

@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SplashProduct = ({ product }) => (
-  <li className="splash-item-link">
+const SplashProduct = ({ product, index }) => (
+  <div className={`splash-item-link-${index + 1}`}>
     <Link to={`/products/${product.id}`}>
-      <img
-        className="product-photo"
-        src={product.photoUrl}
-        alt={product.description}
-      />
+      <div className="photo-wrapper">
+        <img
+          className="product-photo"
+          src={product.photoUrl}
+          alt={product.description}
+        />
+      </div>
+      <div className="splash-category">{product.categories[0].name}</div>
     </Link>
-  </li>
+  </div>
 );
 
 export default SplashProduct;
