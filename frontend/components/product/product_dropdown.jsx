@@ -22,13 +22,11 @@ export default class ProductDropDown extends React.Component {
     return (
       <div>
         <button className="product-show-menu" onClick={this.toggleMenu}>
-          {this.props.title}
+          <span>{this.props.title}</span> <span className="drop-icon">^</span>
         </button>
 
         {this.state.menuHidden ? null : (
-          <div className="product-show-menu-contents">
-            {this.props.content}
-          </div>
+          <div className="product-show-menu-content">{this.props.content}</div>
         )}
       </div>
     );

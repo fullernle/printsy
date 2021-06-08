@@ -86,3 +86,38 @@
 .num-sales {
   font-size: 13px;
 }
+
+.product-icons {
+  width: 48px;
+  height: 48px;
+  font-size: 40px;
+  margin-right: 4px;
+}
+
+.product-wants, .arrives-by {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.product-misc-text {
+  display: flex;
+  flex-direction: col;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.product-show-menu-content {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.product-show-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.drop-icon {
+  font-weight: 600;
+  margin-right: 5px;
+}

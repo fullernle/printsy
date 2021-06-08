@@ -70,15 +70,15 @@ export default class Product extends React.Component {
               <button className="add-to-cart">Add to Cart</button>
             </div>
             <div className="product-wants">
-              <div className="shopping-cart">🛒</div>
-              <div>
+              <div className="product-icons">🛒</div>
+              <div className="product-misc-text">
                 Other people want this. Over {randomWants} people have this in
                 their carts right now.
               </div>
             </div>
             <div className="arrives-by">
-              <div>🚚</div>
-              <div>
+              <div className="product-icons">🚛</div>
+              <div className="product-misc-text">
                 Arrives by tomorrow if you order today. Hooray! This item ships
                 free.
               </div>
