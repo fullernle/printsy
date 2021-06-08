@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchProducts } from "../../actions/product_actions";
+import { fetchCategories } from "../../actions/category_actions";
 
 import Splash from "./splash";
 
@@ -10,6 +11,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   fetchProducts: () => dispatch(fetchProducts()),
+  fetchCategories: () => dispatch(fetchCategories()),
 });
 
 export default connect(mSTP, mDTP)(Splash);

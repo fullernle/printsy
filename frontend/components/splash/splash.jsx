@@ -1,6 +1,6 @@
 import React from "react";
 import SplashProduct from "./splash_product";
-import GreetingContainer from "../home/greeting_container"
+import GreetingContainer from "../home/greeting_container";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class Splash extends React.Component {
 
   componentDidMount() {
     this.props.fetchProducts();
+    this.props.fetchCategories();
   }
 
   generateSpecial() {
@@ -66,21 +67,18 @@ class Splash extends React.Component {
     let selections = [];
     if (this.props.products.length > 1) {
       special = this.generateSpecial();
-      popular = this.generateRandom();
-      discover = this.generateRandom();
-      selections = this.generateRandom();
+      // popular = this.generateRandom();
+      // discover = this.generateRandom();
+      // selections = this.generateRandom();
     }
-
 
     if (!this.props.products) {
       this.props.fetchProducts();
       return <h1 className="loading">Loading...</h1>;
     } else {
       return (
-
-
         <div className="splash-wrapper">
-          {this.props.currentUser ? <GreetingContainer /> : ''}
+          {this.props.currentUser ? <GreetingContainer parentState={this.state.hello}/> : ""}
           <div className="special-background">
             <h1 className="special-header">
               Because everyone deserves something as unique as they are.

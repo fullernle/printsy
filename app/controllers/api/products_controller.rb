@@ -1,14 +1,16 @@
 class Api::ProductsController < ApplicationController
   def index 
     @products = Product.all 
-    render "api/products/index"
+    # render "api/products/index"
+    render :index
   end
 
   def create 
     @product = Product.new(product_params) 
 
     if @product.save 
-      render "api/products/show"
+      # render "api/products/show"
+      render :show
     else
       render json: @product.errors.full_messages, status: 422
     end
@@ -18,7 +20,8 @@ class Api::ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product 
-      render "api/products/show"
+      # render "api/products/show"
+      render :show
     else 
       render json: @product.errors.full_messages, status: 422
     end

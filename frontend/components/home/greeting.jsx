@@ -1,6 +1,8 @@
 import React from "react";
 
-const Greeting = ({ currentUser }) => {
+const Greeting = ({ currentUser, parentState }) => {
+
+
   const personalGreeting = () => (
     <hgroup className="header-group">
       <h1 className="greeting">
@@ -11,7 +13,8 @@ const Greeting = ({ currentUser }) => {
     </hgroup>
   );
 
-  return currentUser ? personalGreeting() : "";
+
+  return currentUser ? personalGreeting() : '';
 };
 
 export default Greeting;
