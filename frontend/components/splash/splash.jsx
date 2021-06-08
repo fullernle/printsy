@@ -1,6 +1,7 @@
 import React from "react";
 import SplashProduct from "./splash_product";
 import GreetingContainer from "../home/greeting_container";
+import SplashCategory from "./splash_category";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class Splash extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProducts();
-    this.props.fetchCategories();
+    // this.props.fetchCategories();
+    this.props.fetchProducts().then(() => this.props.fetchCategories());
   }
 
   generateSpecial() {
@@ -65,7 +66,8 @@ class Splash extends React.Component {
     let popular = [];
     let discover = [];
     let selections = [];
-    if (this.props.products.length > 1) {
+
+    if (this.props.products.length > 6) {
       special = this.generateSpecial();
       // popular = this.generateRandom();
       // discover = this.generateRandom();
@@ -73,22 +75,28 @@ class Splash extends React.Component {
     }
 
     if (!this.props.products) {
-      this.props.fetchProducts();
       return <h1 className="loading">Loading...</h1>;
     } else {
       return (
         <div className="splash-wrapper">
-          {this.props.currentUser ? <GreetingContainer parentState={this.state.hello}/> : ""}
+          {this.props.currentUser ? (
+            <GreetingContainer  />
+          ) : (
+            ""
+          )}
+
           <div className="special-background">
             <h1 className="special-header">
               Because everyone deserves something as unique as they are.
             </h1>
             <h3 className="special-sub-header">Shop special finds</h3>
+
             <div className="splash-special">
               {special === null
                 ? ""
                 : special.map((product, i) => (
-                    <SplashProduct
+                    <SplashCategory
+                      id={product.categories[0].id}
                       className={`special-item-link-${i + 1}`}
                       product={product}
                       index={i}

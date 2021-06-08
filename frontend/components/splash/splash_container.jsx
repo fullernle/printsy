@@ -7,6 +7,7 @@ import Splash from "./splash";
 const mSTP = (state) => ({
   products: Object.values(state.entities.products),
   currentUser: state.entities.users[state.session.currentUserId],
+  categories: Object.values(state.entities.categories)
 });
 
 const mDTP = (dispatch) => ({

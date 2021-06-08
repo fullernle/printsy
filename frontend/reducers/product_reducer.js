@@ -4,6 +4,7 @@ import {
   RECEIVE_PRODUCT_ERRORS,
 } from "../actions/product_actions";
 
+
 const productReducer = (state = {}, action) => {
   Object.freeze(state);
 

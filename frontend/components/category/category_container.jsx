@@ -1,11 +1,14 @@
 import { connect } from "react-redux";
-import { filterCategory} from "../../util/category_util";
+import { fetchCategory } from "../../actions/category_actions";
 
-import Category from "./category"
+import Category from "./category";
 
 const mSTP = (state, ownProps) => ({
-  products: filterCategory(state, ownProps.match.params.id),
+  category: state.entities.categories[ownProps.match.params.id],
 });
 
+const mDTP = (dispatch) => ({
+  fetchCategory: (categoryId) => dispatch(fetchCategory(categoryId)),
+});
 
-export default connect(mSTP, null)(Category);
+export default connect(mSTP, mDTP)(Category);

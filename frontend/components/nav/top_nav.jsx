@@ -30,7 +30,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/2"
+          to="/categories/2"
         >
           <div className="border-underline"></div>
           Clothing
@@ -38,7 +38,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/3"
+          to="/categories/3"
         >
           <div className="border-underline"></div>
           Shoes
@@ -46,7 +46,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/4"
+          to="/categories/4"
         >
           <div className="border-underline"></div>
           Home
@@ -54,7 +54,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/1"
+          to="/categories/1"
         >
           <div className="border-underline"></div>
           Jewelry
@@ -62,7 +62,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/5"
+          to="/categories/5"
         >
           <div className="border-underline"></div>
           Toys
@@ -70,7 +70,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/6"
+          to="/categories/6"
         >
           <div className="border-underline"></div>
           Entertainment
@@ -78,7 +78,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/7"
+          to="/categories/7"
         >
           <div className="border-underline"></div>
           Art
@@ -86,7 +86,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
-          to="/category/8"
+          to="/categories/8"
         >
           <div className="border-underline"></div>
           Tools
