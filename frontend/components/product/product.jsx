@@ -70,14 +70,23 @@ export default class Product extends React.Component {
               <button className="add-to-cart">Add to Cart</button>
             </div>
             <div className="product-wants">
-              <div className="product-icons">🛒</div>
+              {/* <div className="product-icons">🛒</div> */}
+              <img
+                className="product-icons"
+                src="https://images.emojiterra.com/twitter/512px/1f6d2.png"
+                alt="shopping cart icon"
+              />
               <div className="product-misc-text">
                 Other people want this. Over {randomWants} people have this in
                 their carts right now.
               </div>
             </div>
             <div className="arrives-by">
-              <div className="product-icons">🚛</div>
+              <img className="product-icons-truck"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNSlZWjRncneixPudaZn2u2xOCCXD2wkfX2R2olOrSfkGpQG-a9BxpuKRUgJ-s0tRUgAY&usqp=CAU"
+                alt="shipping cart icon"
+              />
+              {/* <div className="product-icons">🚛</div> */}
               <div className="product-misc-text">
                 Arrives by tomorrow if you order today. Hooray! This item ships
                 free.
