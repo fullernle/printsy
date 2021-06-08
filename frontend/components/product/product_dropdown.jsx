@@ -17,16 +17,22 @@ export default class ProductDropDown extends React.Component {
     this.setState({ menuHidden: newState });
   }
 
-
   render() {
     return (
       <div>
         <button className="product-show-menu" onClick={this.toggleMenu}>
-          <span>{this.props.title}</span> <span className="drop-icon">^</span>
+          <span>{this.props.title}</span>
+          <img
+            className="drop-icon"
+            src="https://static.thenounproject.com/png/16957-200.png"
+            alt="down-arrow"
+          />
         </button>
 
         {this.state.menuHidden ? null : (
-          <div className="product-show-menu-content">{this.props.content}</div>
+          <div id="drop-down" className="product-show-menu-content">
+            {this.props.content}
+          </div>
         )}
       </div>
     );

@@ -48,7 +48,7 @@ export default class Product extends React.Component {
               <div className="product-stock">In Stock</div>
             </div>
             <div className="product-quantity">
-              <span className="quantity-title">Quantity</span>
+              <div className="quantity-title">Quantity</div>
               <select className="quantity" name="product">
                 <option value="1">1</option>
                 <option value="2">2</option>
