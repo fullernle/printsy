@@ -8,6 +8,7 @@ class Splash extends React.Component {
     this.special = null;
 
     this.generateSpecial = this.generateSpecial.bind(this);
+    this.generateRandom = this.generateRandom.bind(this);
   }
 
   componentDidMount() {
@@ -15,50 +16,127 @@ class Splash extends React.Component {
   }
 
   generateSpecial() {
-    let special = [];
+    let randomCategories = [];
 
-    while (special.length !== 6) {
+    while (randomCategories.length !== 6) {
+
       let i = Math.floor(Math.random() * this.props.products.length);
-      if (!special.includes(this.props.products[i])) {
-        special.push(this.props.products[i]);
+      let currItem = this.props.products[i];
+
+      if (!randomCategories.includes(currItem)) {
+        let hasCategory;
+
+        for (let i = 0; i < randomCategories.length; i++) {
+          let currItemCategory = currItem.categories[0].id;
+          let randomCategory = randomCategories[i].categories[0].id;
+
+          if (currItemCategory === randomCategory) {
+            hasCategory = true; 
+            break;
+          } else {
+            hasCategory = false;
+          }
+        }
+
+        console.log(hasCategory);
+        if (hasCategory) {
+
+        } else {
+          randomCategories.push(this.props.products[i]);
+        }
+
       }
-      
     }
 
-    return special;
+    return randomCategories;
   }
 
-  generatePopular() {}
+  generateRandom() {
+    let random = [];
 
-  generateDiscover() {}
-
-  generateSelections() {}
-
-  render() {
-    let special = null;
-    if (this.props.products.length > 0) {
-      special = this.generateSpecial();
+    while (random.length !== 6) {
+      let i = Math.floor(Math.random() * this.props.products.length);
+      if (!random.includes(this.props.products[i])) {
+        random.push(this.props.products[i]);
+      }
     }
 
-    console.log(special)
+    return random;
+  }
+
+
+  render() {
+    let special = [];
+    let popular = [];
+    let discover = [];
+    let selections= [];
+
+    if (this.props.products.length > 0) {
+      special = this.generateSpecial();
+      popular = this.generateRandom();
+      discover = this.generateRandom();
+      selections = this.generateRandom();
+    }
+
     return (
       <div className="splash-wrapper">
         <div className="special-background">
-          <h1 className="special-header">Because everyone deserves something as unique as they are.</h1>
+          <h1 className="special-header">
+            Because everyone deserves something as unique as they are.
+          </h1>
           <h3 className="special-sub-header">Shop special finds</h3>
           <div className="splash-special">
             {special === null
               ? ""
               : special.map((product, i) => (
-                  <SplashProduct product={product} index={i} key={product.id} />
+                  <SplashProduct
+                    className={`special-item-link-${i + 1}`}
+                    product={product}
+                    index={i}
+                    key={product.id}
+                  />
                 ))}
           </div>
         </div>
-        <div className="splash-popular">{/* <ProductIndexItem /> */}</div>
 
-        <div className="splash-discover">{/* <ProductIndexItem /> */}</div>
+        <div className="splash-popular">
+          {popular === null
+            ? ""
+            : popular.map((product, i) => (
+                <SplashProduct
+                  className={`popular-item-link-${i + 1}`}
+                  product={product}
+                  index={i}
+                  key={product.id}
+                />
+              ))}
+        </div>
 
-        <div className="splash-selections"></div>
+        <div className="splash-discover">
+          {discover === null
+            ? ""
+            : discover.map((product, i) => (
+                <SplashProduct
+                  className={`discover-item-link-${i + 1}`}
+                  product={product}
+                  index={i}
+                  key={product.id}
+                />
+              ))}
+        </div>
+
+        <div className="splash-selections">
+          {selections === null
+            ? ""
+            : selections.map((product, i) => (
+                <SplashProduct
+                  className={`selection-item-link-${i + 1}`}
+                  product={product}
+                  index={i}
+                  key={product.id}
+                />
+              ))}
+        </div>
 
         <div className="splash-info"></div>
       </div>

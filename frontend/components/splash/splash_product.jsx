@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SplashProduct = ({ product, index }) => (
-  <div className={`splash-item-link-${index + 1}`}>
+const SplashProduct = ({ product, index, className}) => (
+  // <div className={`splash-item-link-${index + 1}`}>
+  <div className={className}>
     <Link to={`/products/${product.id}`}>
       <div className="photo-wrapper">
         <img
