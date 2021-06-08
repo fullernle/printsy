@@ -1,11 +1,10 @@
 import React from "react";
 import SplashProduct from "./splash_product";
+import GreetingContainer from "../home/greeting_container"
 
 class Splash extends React.Component {
   constructor(props) {
     super(props);
-
-    this.special = null;
 
     this.generateSpecial = this.generateSpecial.bind(this);
     this.generateRandom = this.generateRandom.bind(this);
@@ -19,7 +18,6 @@ class Splash extends React.Component {
     let randomCategories = [];
 
     while (randomCategories.length !== 6) {
-
       let i = Math.floor(Math.random() * this.props.products.length);
       let currItem = this.props.products[i];
 
@@ -31,20 +29,17 @@ class Splash extends React.Component {
           let randomCategory = randomCategories[i].categories[0].id;
 
           if (currItemCategory === randomCategory) {
-            hasCategory = true; 
+            hasCategory = true;
             break;
           } else {
             hasCategory = false;
           }
         }
 
-        console.log(hasCategory);
         if (hasCategory) {
-
         } else {
           randomCategories.push(this.props.products[i]);
         }
-
       }
     }
 
@@ -64,83 +59,90 @@ class Splash extends React.Component {
     return random;
   }
 
-
   render() {
     let special = [];
     let popular = [];
     let discover = [];
-    let selections= [];
-
-    if (this.props.products.length > 0) {
+    let selections = [];
+    if (this.props.products.length > 1) {
       special = this.generateSpecial();
       popular = this.generateRandom();
       discover = this.generateRandom();
       selections = this.generateRandom();
     }
 
-    return (
-      <div className="splash-wrapper">
-        <div className="special-background">
-          <h1 className="special-header">
-            Because everyone deserves something as unique as they are.
-          </h1>
-          <h3 className="special-sub-header">Shop special finds</h3>
-          <div className="splash-special">
-            {special === null
+
+    if (!this.props.products) {
+      this.props.fetchProducts();
+      return <h1 className="loading">Loading...</h1>;
+    } else {
+      return (
+
+
+        <div className="splash-wrapper">
+          {this.props.currentUser ? <GreetingContainer /> : ''}
+          <div className="special-background">
+            <h1 className="special-header">
+              Because everyone deserves something as unique as they are.
+            </h1>
+            <h3 className="special-sub-header">Shop special finds</h3>
+            <div className="splash-special">
+              {special === null
+                ? ""
+                : special.map((product, i) => (
+                    <SplashProduct
+                      className={`special-item-link-${i + 1}`}
+                      product={product}
+                      index={i}
+                      key={product.id}
+                    />
+                  ))}
+            </div>
+          </div>
+
+          <div className="splash-popular">
+            {popular === null
               ? ""
-              : special.map((product, i) => (
+              : popular.map((product, i) => (
                   <SplashProduct
-                    className={`special-item-link-${i + 1}`}
+                    className={`popular-item-link-${i + 1}`}
                     product={product}
                     index={i}
                     key={product.id}
                   />
                 ))}
           </div>
-        </div>
 
-        <div className="splash-popular">
-          {popular === null
-            ? ""
-            : popular.map((product, i) => (
-                <SplashProduct
-                  className={`popular-item-link-${i + 1}`}
-                  product={product}
-                  index={i}
-                  key={product.id}
-                />
-              ))}
-        </div>
+          <div className="splash-discover">
+            {discover === null
+              ? ""
+              : discover.map((product, i) => (
+                  <SplashProduct
+                    className={`discover-item-link-${i + 1}`}
+                    product={product}
+                    index={i}
+                    key={product.id}
+                  />
+                ))}
+          </div>
 
-        <div className="splash-discover">
-          {discover === null
-            ? ""
-            : discover.map((product, i) => (
-                <SplashProduct
-                  className={`discover-item-link-${i + 1}`}
-                  product={product}
-                  index={i}
-                  key={product.id}
-                />
-              ))}
-        </div>
+          <div className="splash-selections">
+            {selections === null
+              ? ""
+              : selections.map((product, i) => (
+                  <SplashProduct
+                    className={`selection-item-link-${i + 1}`}
+                    product={product}
+                    index={i}
+                    key={product.id}
+                  />
+                ))}
+          </div>
 
-        <div className="splash-selections">
-          {selections === null
-            ? ""
-            : selections.map((product, i) => (
-                <SplashProduct
-                  className={`selection-item-link-${i + 1}`}
-                  product={product}
-                  index={i}
-                  key={product.id}
-                />
-              ))}
+          <div className="splash-info"></div>
         </div>
-
-        <div className="splash-info"></div>
-      </div>
-    );
+      );
+    }
   }
 }
 

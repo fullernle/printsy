@@ -1,0 +1,43 @@
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 13px;
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(34, 34, 34, 0.15);
+}
+
+.bottom-nav a {
+  color: black;
+  height: 30px;
+}
+
+.bottom-nav a:hover {
+  // border-bottom: 2px solid black;
+}
+
+.bottom-nav-link {
+  text-align: center;
+  width: 100px;
+  position: relative;
+}
+
+.border-underline {
+  transition: all 100ms linear;
+  width: 0px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-bottom: 2px solid black;
+  margin: 0;
+}
+
+.bottom-nav-link:hover .border-underline {
+  width: 100%;
+  margin-left: -50px;
+}
+
+.active-link {
+  border-bottom: 3px solid black;
+}
