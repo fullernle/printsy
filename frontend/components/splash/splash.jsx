@@ -8,6 +8,11 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      special: [],
+      discover: []
+    }
+
     this.generateSpecial = this.generateSpecial.bind(this);
     this.generateRandom = this.generateRandom.bind(this);
   }
@@ -69,7 +74,7 @@ class Splash extends React.Component {
     let discover = [];
     let selections = [];
 
-    if (this.props.products.length > 6) {
+    if (this.props.products.length > 6 && special.length === 0) {
       special = this.generateSpecial();
       popular = this.generateRandom();
       // discover = this.generateRandom();
