@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
       this.props.closeModal()
-      this.props.history.push("/home");
+      this.props.history.push("/");
     });
   }
 
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className={styles.Errors} key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );

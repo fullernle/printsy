@@ -1439,6 +1439,7 @@ cart4 = Cart.create!(user_id: 4)
 cart5 = Cart.create!(user_id: 5)
 cart6 = Cart.create!(user_id: 6)
 cart7 = Cart.create!(user_id: 7)
+cart8 = Cart.create!(user_id: 8)
 
 
 
