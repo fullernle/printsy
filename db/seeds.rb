@@ -881,42 +881,42 @@ p65.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6
 p66 = Product.create!(
   name: "My Neighbor Totoro Figures!",
   description: "LOOK AT THESE ADORABLE FIGURES. NOW BUY IT. :D",
-  price: 10.99,
-  seller_id: 4
+  price: 8.99,
+  seller_id: 2
 )
 
 
-ProductCategory.create!(product_id: 66, category_id: 1)
 ProductCategory.create!(product_id: 66, category_id: 6)
+ProductCategory.create!(product_id: 66, category_id: 5)
 
 p66.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/66.png"), filename: "66.png")
 
 
 
 p67 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Artistic Skull ",
+  description: "Artistic rendition of a skull! Great art piece!",
+  price: 7.99,
+  seller_id: 3
 )
 
 
-ProductCategory.create!(product_id: 67, category_id: 1)
-ProductCategory.create!(product_id: 67, category_id: 6)
+ProductCategory.create!(product_id: 67, category_id: 7)
+ProductCategory.create!(product_id: 67, category_id: 4)
 
 p67.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/67.png"), filename: "67.png")
 
 
 
 p68 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Pokeball with Stand",
+  description: "Store random things in this awesome pokeball! Button works! Just need to buy spring.",
+  price: 8.99,
+  seller_id: 5
 )
 
 
-ProductCategory.create!(product_id: 68, category_id: 1)
+ProductCategory.create!(product_id: 68, category_id: 1)``
 ProductCategory.create!(product_id: 68, category_id: 6)
 
 p68.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/68.png"), filename: "68.png")
