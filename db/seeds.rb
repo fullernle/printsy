@@ -55,9 +55,9 @@ user8 = User.create!(
   email: 'spencer@spencer.com', 
   password: '123123');
 
-c1 = Category.create!(name: 'Jewelry')
-c2 = Category.create!(name: 'Clothing')
-c3 = Category.create!(name: 'Shoes')
+c1 = Category.create!(name: 'Accessories')
+c2 = Category.create!(name: 'Fashion')
+c3 = Category.create!(name: 'Games')
 c4 = Category.create!(name: 'Home')
 c5 = Category.create!(name: 'Toys')
 c6 = Category.create!(name: 'Entertainment')
