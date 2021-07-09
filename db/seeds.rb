@@ -669,8 +669,8 @@ p50.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/5
 
 
 p51 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
+  name: "Pegboard Tools Holder",
+  description: "Dynamic tool holder for your peg wall! Tons of variety for all your tools!",
   price: 10.99,
   seller_id: 4
 )
