@@ -676,112 +676,95 @@ p51 = Product.create!(
 )
 
 
-ProductCategory.create!(product_id: 51, category_id: 1)
-ProductCategory.create!(product_id: 51, category_id: 6)
+ProductCategory.create!(product_id: 51, category_id: 8)
 
 p51.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/51.png"), filename: "51.png")
 
 
 
 p52 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
+  name: "Soldering Wire Station",
+  description: "Helping hands to keep your wires still while soldering! Comes in three sizes for a variety of wire diameters.",
+  price: 5.99,
   seller_id: 4
 )
 
 
-ProductCategory.create!(product_id: 52, category_id: 1)
-ProductCategory.create!(product_id: 52, category_id: 6)
+ProductCategory.create!(product_id: 52, category_id: 8)
 
 p52.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/52.png"), filename: "52.png")
 
 
 
 p53 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Hex tool handles",
+  description: "Tired of hurting your hands trying to tigthen those dang hex screws? Print out some handles for all your sizes and needs!",
+  price: 4.99,
+  seller_id: 5
 )
 
 
-ProductCategory.create!(product_id: 53, category_id: 1)
-ProductCategory.create!(product_id: 53, category_id: 6)
+ProductCategory.create!(product_id: 53, category_id: 8)
 
 p53.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/53.png"), filename: "53.png")
 
 
 
 p54 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
+  name: "Iron Man Arc Reactor",
+  description: "Finish that cosplay with this awesome arc reactor! LEDs not included.",
   price: 10.99,
-  seller_id: 4
+  seller_id: 7
 )
 
 
 ProductCategory.create!(product_id: 54, category_id: 1)
 ProductCategory.create!(product_id: 54, category_id: 6)
+ProductCategory.create!(product_id: 54, category_id: 5)
 
 p54.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/54.png"), filename: "54.png")
 
 
-
-p55 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
-)
-
-
-ProductCategory.create!(product_id: 55, category_id: 1)
-ProductCategory.create!(product_id: 55, category_id: 6)
-
-p55.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/55.png"), filename: "55.png")
-
-
-
 p56 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Dr Doom Mask!",
+  description: "Check out this awesome mask! Dr. Doom from Fantastic Four. DOES NOT INCLUDE CLOAK, just mask.",
+  price: 14.99,
+  seller_id: 8
 )
 
 
-ProductCategory.create!(product_id: 56, category_id: 1)
 ProductCategory.create!(product_id: 56, category_id: 6)
+ProductCategory.create!(product_id: 56, category_id: 2)
+ProductCategory.create!(product_id: 56, category_id: 5)
 
 p56.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/56.png"), filename: "56.png")
 
 
 
 p57 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Mandalorian Helmet",
+  description: "This is the way. Become your favorite mando now!",
+  price: 29.99,
+  seller_id: 5
 )
 
 
-ProductCategory.create!(product_id: 57, category_id: 1)
 ProductCategory.create!(product_id: 57, category_id: 6)
+ProductCategory.create!(product_id: 57, category_id: 5)
 
 p57.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/57.png"), filename: "57.png")
 
 
 
 p58 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Blue Spirit Mask",
+  description: "Who is it under the mask? Inspired by the blue spirit in Avatar The Last Airbender. Finish your next cosplay now!",
+  price: 9.99,
+  seller_id: 3
 )
 
 
-ProductCategory.create!(product_id: 58, category_id: 1)
+ProductCategory.create!(product_id: 58, category_id: 5)
 ProductCategory.create!(product_id: 58, category_id: 6)
 
 p58.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/58.png"), filename: "58.png")
@@ -789,40 +772,42 @@ p58.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/5
 
 
 p59 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Wonder Woman Tiara",
+  description: "Perfect for halloween or conventions! Does not come painted!",
+  price: 19.99,
+  seller_id: 1
 )
 
 
 ProductCategory.create!(product_id: 59, category_id: 1)
+ProductCategory.create!(product_id: 59, category_id: 2)
 ProductCategory.create!(product_id: 59, category_id: 6)
+ProductCategory.create!(product_id: 59, category_id: 5)
 
 p59.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/59.png"), filename: "59.png")
 
 
 
 p60 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Star Earrings",
+  description: "Print out these cute star earrings!",
+  price: 4.99,
+  seller_id: 2
 )
 
 
 ProductCategory.create!(product_id: 60, category_id: 1)
-ProductCategory.create!(product_id: 60, category_id: 6)
+ProductCategory.create!(product_id: 60, category_id: 2)
 
 p60.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/60.png"), filename: "60.png")
 
 
 
 p61 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Jack Skellington Earrings!",
+  description: "Nightmare before Christmas, but on your ears! Take the iconic character and embrace him!",
+  price: 8.99,
+  seller_id: 5
 )
 
 
@@ -834,10 +819,10 @@ p61.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6
 
 
 p62 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Hummingbird Earrings",
+  description: "Take these beautiful pieces of art and rock them on the daily!",
+  price: 7.99,
+  seller_id: 2
 )
 
 
@@ -849,29 +834,29 @@ p62.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6
 
 
 p63 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Mooncake Earrings",
+  description: "Take a piece of culture with you everyday! Moon cake earrings :D",
+  price: 8.99,
+  seller_id: 3
 )
 
 
 ProductCategory.create!(product_id: 63, category_id: 1)
-ProductCategory.create!(product_id: 63, category_id: 6)
 
 p63.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/63.png"), filename: "63.png")
 
 
 
 p64 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Rupee Earrings",
+  description: "Get that zelda on with these beautiful earrings!",
+  price: 8.99,
+  seller_id: 6
 )
 
 
 ProductCategory.create!(product_id: 64, category_id: 1)
+ProductCategory.create!(product_id: 64, category_id: 3)
 ProductCategory.create!(product_id: 64, category_id: 6)
 
 p64.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/64.png"), filename: "64.png")
@@ -879,14 +864,14 @@ p64.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6
 
 
 p65 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
-  price: 10.99,
-  seller_id: 4
+  name: "Majora's Mask",
+  description: "Become the next skull kid! Take this iconic mask and become the best cosplay of the party!",
+  price: 39.99,
+  seller_id: 8
 )
 
 
-ProductCategory.create!(product_id: 65, category_id: 1)
+ProductCategory.create!(product_id: 65, category_id: 3)
 ProductCategory.create!(product_id: 65, category_id: 6)
 
 p65.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/65.png"), filename: "65.png")
@@ -894,8 +879,8 @@ p65.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6
 
 
 p66 = Product.create!(
-  name: "Witcher Necklace",
-  description: "White wolf medallion!",
+  name: "My Neighbor Totoro Figures!",
+  description: "LOOK AT THESE ADORABLE FIGURES. NOW BUY IT. :D",
   price: 10.99,
   seller_id: 4
 )
