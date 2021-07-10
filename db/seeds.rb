@@ -724,6 +724,17 @@ ProductCategory.create!(product_id: 54, category_id: 5)
 
 p54.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/54.png"), filename: "54.png")
 
+p55 = Product.create!(
+	name: "Ninja clothing hooks",
+	description: "Awesome little home decor! Ninja clothing hooks!",
+	price: 4.99,
+	seller_id: 5
+)
+
+ProductCategory.create!(product_id: 55, category_id: 4)
+ProductCategory.create!(product_id: 55, category_id: 8)
+
+p55.photo.attach(io: open("https://printsy-dev.s3.us-west-1.amazonaws.com/seed/55.png"), filename: "55.png")
 
 p56 = Product.create!(
   name: "Dr Doom Mask!",
@@ -1385,7 +1396,7 @@ p99.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/9
 
 p100 = Product.create!(
   name: "Rey Skywalker Saber Hilt",
-  description: "",
+  description: "BEAUTIFUL art pieces. Rey Skywalker saber hilts!",
   price: 39.99,
   seller_id: 3
 )
