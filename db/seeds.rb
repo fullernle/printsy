@@ -379,7 +379,7 @@ p30 = Product.create!(
   seller_id: 1)
 
 ProductCategory.create!(product_id: 30, category_id: 4)
-ProductCategory.create!(product_id: 30, category_id: 3)
+ProductCategory.create!(product_id: 30, category_id: 8)
 # p30.photo.attach(io: URI.open("s3://printsy-dev/seed/30.png"), filename: "30.png")
 p30.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/30.png"), filename: "30.png")
 
@@ -390,7 +390,7 @@ p31 = Product.create!(
   seller_id: 2)
 
 ProductCategory.create!(product_id: 31, category_id: 4)
-ProductCategory.create!(product_id: 31, category_id: 3)
+ProductCategory.create!(product_id: 31, category_id: 8)
 # p31.photo.attach(io: URI.open("s3://printsy-dev/seed/31.png"), filename: "31.png")
 p31.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/31.png"), filename: "31.png")
 
@@ -400,8 +400,8 @@ p32 = Product.create!(
   price: 3.49, 
   seller_id: 8)
 
-ProductCategory.create!(product_id: 32, category_id: 4)
-ProductCategory.create!(product_id: 32, category_id: 3)
+ProductCategory.create!(product_id: 32, category_id: 8)
+ProductCategory.create!(product_id: 32, category_id: 1)
 # p32.photo.attach(io: URI.open("s3://printsy-dev/seed/32.png"), filename: "32.png")
 p32.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/32.png"), filename: "32.png")
 
@@ -412,7 +412,7 @@ p33 = Product.create!(
   seller_id: 8)
 
 ProductCategory.create!(product_id: 33, category_id: 4)
-ProductCategory.create!(product_id: 33, category_id: 3)
+ProductCategory.create!(product_id: 33, category_id: 8)
 # p33.photo.attach(io: URI.open("s3://printsy-dev/seed/33.png"), filename: "33.png")
 p33.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/33.png"), filename: "33.png")
 
