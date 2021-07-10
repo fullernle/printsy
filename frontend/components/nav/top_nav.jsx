@@ -33,7 +33,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           to="/categories/2"
         >
           <div className="border-underline"></div>
-          Clothing
+          Accessories
         </NavLink>
         <NavLink
           activeClassName="active-link"
@@ -41,7 +41,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           to="/categories/3"
         >
           <div className="border-underline"></div>
-          Shoes
+          Fashion
         </NavLink>
         <NavLink
           activeClassName="active-link"
