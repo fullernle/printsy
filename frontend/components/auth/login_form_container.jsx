@@ -17,9 +17,9 @@ const mDTP = (dispatch) => ({
       className="modal-change-form"
       onClick={(e) => {
         e.preventDefault();
-        dispatch(openModal("signup"))
         dispatch(resetSessionErrors());
-    }}
+        dispatch(openModal("signup"));
+      }}
     >
       Register
     </button>

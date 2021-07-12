@@ -57,7 +57,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           to="/categories/1"
         >
           <div className="border-underline"></div>
-          Accessories
+          Accesories
         </NavLink>
         <NavLink
           activeClassName="active-link"

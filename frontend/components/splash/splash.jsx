@@ -15,12 +15,24 @@ class Splash extends React.Component {
 
     this.generateSpecial = this.generateSpecial.bind(this);
     this.generateRandom = this.generateRandom.bind(this);
+
+    this.state = {
+      special: null,
+      popular: null,
+      discover: null,
+      selections: null,
+    };
   }
 
   componentDidMount() {
     // this.props.fetchCategories();
     // this.props.fetchProducts().then(() => this.props.fetchCategories());
-    this.props.fetchProducts();
+    this.props.fetchProducts().then(() => {
+      this.setState({
+        special: this.generateSpecial(),
+        popular: this.generateSpecial(),
+      });
+    });
   }
 
   generateSpecial() {
@@ -69,18 +81,6 @@ class Splash extends React.Component {
   }
 
   render() {
-    let special = [];
-    let popular = [];
-    let discover = [];
-    let selections = [];
-
-    if (this.props.products.length > 6 && special.length === 0) {
-      special = this.generateSpecial();
-      popular = this.generateRandom();
-      // discover = this.generateRandom();
-      // selections = this.generateRandom();
-    }
-
     if (!this.props.products) {
       return <h1 className="loading">Loading...</h1>;
     } else {
@@ -95,9 +95,9 @@ class Splash extends React.Component {
             <h3 className="special-sub-header">Shop special finds</h3>
 
             <div className="splash-special">
-              {special === null
+              {this.state.special === null
                 ? ""
-                : special.map((product, i) => (
+                : this.state.special.map((product, i) => (
                     <SplashCategory
                       id={product.categories[0].id}
                       className={`special-item-link-${i + 1}`}
@@ -112,9 +112,9 @@ class Splash extends React.Component {
           <div className="splash-popular">
             <h2 className="popular-header">Popular gifts right now</h2>
             <div className="popular-list">
-              {popular === null
+              {this.state.popular === null
                 ? ""
-                : popular.map((product, i) => (
+                : this.state.popular.map((product, i) => (
                     <ProductListing
                       className={`popular-item-link-${i + 1}`}
                       product={product}
@@ -126,9 +126,9 @@ class Splash extends React.Component {
           </div>
 
           <div className="splash-discover">
-            {discover === null
+            {this.state.discover === null
               ? ""
-              : discover.map((product, i) => (
+              : this.state.discover.map((product, i) => (
                   <SplashProduct
                     className={`discover-item-link-${i + 1}`}
                     product={product}
@@ -139,9 +139,9 @@ class Splash extends React.Component {
           </div>
 
           <div className="splash-selections">
-            {selections === null
+            {this.state.selections === null
               ? ""
-              : selections.map((product, i) => (
+              : this.state.selections.map((product, i) => (
                   <SplashProduct
                     className={`selection-item-link-${i + 1}`}
                     product={product}

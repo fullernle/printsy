@@ -7,7 +7,6 @@ import SplashContainer from "./splash/splash_container";
 import TopNavContainer from "./nav/top_nav_container";
 import CartContainer from "./cart/cart_container";
 import Modal from "./modal/modal";
-import Home from "./home/home";
 import ProductContainer from "./product/product_container";
 
 const App = () => (
@@ -18,8 +17,6 @@ const App = () => (
     </header>
 
     <Switch>
-      <ProtectedRoute exact path="/home" component={Home} />
-			<ProtectedRoute exact path="/cart/:id" component={CartContainer} />
       <Route path="/categories/:id" component={CategoryContainer} />
       <Route path="/products/:id" component={ProductContainer} />
       <Route exact path="/" component={SplashContainer} />

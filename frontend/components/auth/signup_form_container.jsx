@@ -3,7 +3,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { resetSessionErrors, signup } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { openModal, closeModal } from "../../actions/modal_actions"
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mSTP = (state) => ({
   errors: state.errors.session,
@@ -17,8 +17,8 @@ const mDTP = (dispatch) => ({
       className="modal-change-form"
       onClick={(e) => {
         e.preventDefault();
-        dispatch(openModal("login"))
-        dispatch(resetSessionErrors())
+        dispatch(resetSessionErrors());
+        dispatch(openModal("login"));
       }}
     >
       Login
