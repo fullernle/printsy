@@ -22,10 +22,12 @@ class SearchBar extends React.Component {
       <div className="search-section">
         <input
           type="text"
-          value={this.state.search}
+          placeholder={this.state.search}
           onChange={this.update("search")}
           className="search-bar"
         />
+
+        <i className="fas fa-search"></i>
       </div>
     );
   }

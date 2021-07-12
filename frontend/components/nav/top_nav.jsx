@@ -31,12 +31,11 @@ const TopNav = ({ currentUser, logout, openModal }) => {
   const dropdown_menu = () => <DropDown user={currentUser} logout={logout} />;
 
   return (
-    <nav className="entire-nav">
+    <nav className="nav-wrapper">
       <nav className="top-nav">
         <Link to="/" className="home-link">
           <span className="home-logo">Printsy</span>
         </Link>
-        <div className="placeholder"></div>
         <SearchBar />
 
         {currentUser ? dropdown_menu() : login_button()}
