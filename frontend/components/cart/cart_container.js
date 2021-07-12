@@ -10,3 +10,5 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
   fetchCart: (userId) => dispatch(fetchCart(userId)),
 });
+
+export default connect(mSTP, mDTP)(Cart);

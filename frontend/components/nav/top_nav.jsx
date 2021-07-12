@@ -6,11 +6,27 @@ import DropDown from "./dropdown";
 const TopNav = ({ currentUser, logout, openModal }) => {
   const login_button = () => (
     <nav className="login-signup">
-      <button className="login-button" onClick={() => openModal("login")}>
+      <button className="login nav-bttn" onClick={() => openModal("login")}>
         Sign In
       </button>
     </nav>
   );
+
+  const cart_button = () => {
+    if (currentUser) {
+      return (
+        <NavLink className="cart nav-bttn" to={`/carts/${currentUser.id}`}>
+          <i className="fas fa-shopping-cart"></i>
+        </NavLink>
+      );
+    } else {
+      return (
+        <button className="cart nav-bttn">
+          <i className="fas fa-shopping-cart"></i>
+        </button>
+      );
+    }
+  };
 
   const dropdown_menu = () => <DropDown user={currentUser} logout={logout} />;
 
@@ -24,6 +40,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
         <SearchBar />
 
         {currentUser ? dropdown_menu() : login_button()}
+        {cart_button()}
       </nav>
 
       <nav className="bottom-nav">

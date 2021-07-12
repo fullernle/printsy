@@ -1,6 +1,6 @@
 import { RECEIVE_CART } from "../actions/cart_action";
 
-const cartReducer = (state = {}, action) => {
+const cartsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -13,3 +13,5 @@ const cartReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default cartsReducer;

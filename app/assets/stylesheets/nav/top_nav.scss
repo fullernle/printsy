@@ -36,11 +36,11 @@
     font-weight: 500;
   }
 
-  .login-button {
+  .nav-bttn {
     background: none;
     color: inherit;
     border: none;
-    padding: 10px;
+    padding: 12px;
     font: inherit;
     cursor: pointer;
     outline: inherit;
@@ -62,7 +62,7 @@
     transition: transform 100ms ease-out, background 150ms ease-out;
   }
 
-  .login-button:hover,
+  .nav-bttn:hover,
   .nav-show-menu:hover {
     background-color: rgba(182, 182, 182, 0.541);
     transform: scale(1.01);
@@ -127,7 +127,7 @@
     align-self: center;
   }
 
-  .login-button {
+  .nav-bttn {
     background: none;
     color: inherit;
     border: none;
@@ -153,7 +153,7 @@
     transition: transform 100ms ease-out, background 150ms ease-out;
   }
 
-  .login-button:hover,
+  .nav-bttn:hover,
   .nav-show-menu:hover {
     background-color: rgba(182, 182, 182, 0.541);
     transform: scale(1.01);
