@@ -1,7 +1,8 @@
 class Api::CartsController < ApplicationController
-  before_action :require_logged_in
+  # before_action :require_logged_in
+
   def show 
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find_by(user_id: params[:id])
     render :show
   end
 
