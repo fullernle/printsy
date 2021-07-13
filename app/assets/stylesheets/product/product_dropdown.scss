@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .product-show-menu {
   background: none;
   text-align: left;
@@ -28,11 +30,16 @@
   border: none;
   transition: 100ms;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .add-to-cart:hover {
   background-color: rgb(46, 46, 46);
-  transform: scale(1.05);
+  transform: scale(1.025);
+}
+
+.add-to-cart:active {
+  background-color: $main-color;
 }
 
 .quantity {
@@ -44,6 +51,7 @@
   border-style: solid;
   border-width: 1px;
   display: block;
+  cursor: pointer;
 }
 
 .quantity:hover {

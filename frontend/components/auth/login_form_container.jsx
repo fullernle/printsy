@@ -3,7 +3,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { login, resetSessionErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../../actions/modal_actions";
 
 const mSTP = (state) => ({
   errors: state.errors.session,

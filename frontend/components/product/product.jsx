@@ -1,15 +1,30 @@
 import React from "react";
+import { addItemToCart } from "../../actions/cart_action";
 import { showProduct } from "../../util/product_util";
 import ProductDropDown from "./product_dropdown";
 
 export default class Product extends React.Component {
   constructor(props) {
     super(props);
+
+		this.addToCart = this.addToCart.bind(this);
+		this.convertPrice = this.convertPrice.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.id);
   }
+
+  addToCart(e) {
+    const { openModal, product, currentUser } = this.props;
+    e.preventDefault();
+		console.log(product);
+    currentUser ? addItemToCart(product) : openModal("requireLogin");
+  }
+
+	convertPrice(price) {
+		return Number.parseFloat(price).toFixed(2);
+	}
 
   render() {
     const { product } = this.props;
@@ -43,7 +58,7 @@ export default class Product extends React.Component {
             <div className="product-title">{product.name}</div>
 
             <div className="price-stock">
-              <div className="product-price">${parseFloat(product.price)}</div>
+              <div className="product-price">${this.convertPrice(product.price)}</div>
 
               <div className="product-stock">In Stock</div>
             </div>
@@ -63,14 +78,12 @@ export default class Product extends React.Component {
               </select>
             </div>
 
-            {/* <div>
-              <button className="buy-it-now">Buy It Now</button>
-            </div> */}
             <div>
-              <button className="add-to-cart">Add to Cart</button>
+              <button className="add-to-cart" onClick={this.addToCart}>
+                Add to Cart
+              </button>
             </div>
             <div className="product-wants">
-              {/* <div className="product-icons">🛒</div> */}
               <img
                 className="product-icons"
                 src="https://images.emojiterra.com/twitter/512px/1f6d2.png"
@@ -82,11 +95,11 @@ export default class Product extends React.Component {
               </div>
             </div>
             <div className="arrives-by">
-              <img className="product-icons-truck"
+              <img
+                className="product-icons-truck"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNSlZWjRncneixPudaZn2u2xOCCXD2wkfX2R2olOrSfkGpQG-a9BxpuKRUgJ-s0tRUgAY&usqp=CAU"
                 alt="shipping cart icon"
               />
-              {/* <div className="product-icons">🚛</div> */}
               <div className="product-misc-text">
                 Arrives by tomorrow if you order today. Hooray! This item ships
                 free.
