@@ -8,7 +8,7 @@ import { filterCart } from "../../util/cart_util";
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUserId,
   product: state.entities.products[ownProps.match.params.id],
-	cart: filterCart(state.carts, state.session.currentUserId)
+	cart: filterCart(state.entities.carts, state.session.currentUserId)
 });
 
 const mDTP = (dispatch) => ({

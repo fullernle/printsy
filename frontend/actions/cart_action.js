@@ -37,11 +37,13 @@ export const createCart = (userId) => (dispatch) =>
     (err) => dispatch(receiveErrors(err.responseJSON))
   );
 
-export const addItemToCart = (cartItem) => (dispatch) =>
+export const addItemToCart = (cartItem) => (dispatch) => {
+	console.log(cartItem);
   APIUtil.addItemToCart(cartItem).then(
     (cart) => dispatch(receiveCart(cart)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   );
+};
 
 export const removeItemFromCart = (cartItemId) => (dispatch) =>
   APIUtil.removeItemFromCart(cartItemId).then(

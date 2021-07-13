@@ -18,7 +18,8 @@ function Modal({ modal, closeModal }) {
       component = <SignupFormContainer />;
       break;
 		case "requireLogin":
-			component = <RequireLogin />;
+			// component = <RequireLogin />;
+			componet = <div> Please login to continue! </div>
 			break;
     default:
       return null;

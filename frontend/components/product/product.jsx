@@ -1,6 +1,4 @@
 import React from "react";
-import { addItemToCart } from "../../actions/cart_action";
-import { showProduct } from "../../util/product_util";
 import ProductDropDown from "./product_dropdown";
 
 export default class Product extends React.Component {
@@ -27,10 +25,10 @@ export default class Product extends React.Component {
   }
 
   addToCart() {
-    const { openModal, product, currentUser } = this.props;
-    console.log(product);
-    console.log(this.state);
-    currentUser ? console.log("HELLO") : openModal("requireLogin");
+    const { openModal, currentUser } = this.props;
+		console.log(this.state);
+		const cartItem = Object.assign({}, this.state);
+    currentUser ? this.props.addItemToCart(cartItem) : openModal("requireLogin");
   }
 
   convertPrice(price) {

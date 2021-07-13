@@ -6,7 +6,7 @@ import Cart from "./cart";
 
 
 const mSTP = (state) => ({
-  cart: filterCart(state, state.session.currentUserId),
+  cart: filterCart(state.entities.carts, state.session.currentUserId),
 	currUserId: state.session.currentUserId
 });
 
