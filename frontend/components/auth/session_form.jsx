@@ -32,8 +32,9 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => {
-      this.props.closeModal()
+    this.props.processForm(user).then((data) => {
+      this.props.fetchCart(data.currentUser.id);
+      this.props.closeModal();
     });
   }
 
@@ -45,7 +46,9 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li className="errors" key={`error-${i}`}>{error}</li>
+          <li className="errors" key={`error-${i}`}>
+            {error}
+          </li>
         ))}
       </ul>
     );
@@ -53,8 +56,9 @@ class SessionForm extends React.Component {
 
   demoUser() {
     let demoUser = { email: "demo@demo.com", password: "123123" };
-    this.props.processForm(demoUser).then(() => {
-      this.props.closeModal()
+    this.props.processForm(demoUser).then((data) => {
+      this.props.fetchCart(data.currentUser.id);
+      this.props.closeModal();
     });
   }
 
@@ -120,14 +124,11 @@ class SessionForm extends React.Component {
             <button className="session-submit">{this.props.formType}</button>
           </div>
         </form>
-        { 
-          this.props.formType === "Sign In" ? (
-              <button className="demo-button" onClick={this.demoUser}>
-                Demo Login
-              </button>
-            ) : null
-        }
-        
+        {this.props.formType === "Sign In" ? (
+          <button className="demo-button" onClick={this.demoUser}>
+            Demo Login
+          </button>
+        ) : null}
       </div>
     );
   }

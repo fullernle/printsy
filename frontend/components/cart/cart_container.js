@@ -1,16 +1,9 @@
 import { connect } from "react-redux";
 import { fetchCart } from "../../actions/cart_action";
+import { filterCart } from "../../util/cart_util";
 
 import Cart from "./cart";
 
-function filterCart(carts, userId) {
-	for(let i = 0; i < carts.length; i++) {
-		if (carts[i].userId === userId) {
-			return carts[i];
-		}
-	}
-	return null;
-}
 
 const mSTP = (state) => ({
   cart: filterCart(state, state.session.currentUserId),

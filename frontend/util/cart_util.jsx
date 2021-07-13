@@ -30,3 +30,13 @@ export const updateItemInCart = (cartItem) =>
     url: `/api/cart_items/${cartItem.id}`,
     data: { cartItem },
   });
+
+
+export const filterCart = (carts, userId) => {
+  for (let i = 0; i < carts.length; i++) {
+    if (carts[i].userId === userId) {
+      return carts[i];
+    }
+  }
+  return null;
+}

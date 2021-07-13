@@ -7,24 +7,42 @@ export default class Product extends React.Component {
   constructor(props) {
     super(props);
 
-		this.addToCart = this.addToCart.bind(this);
-		this.convertPrice = this.convertPrice.bind(this);
+    this.state = {
+      quantity: 1,
+      cart_id: null,
+      product_id: null,
+    };
+
+    this.addToCart = this.addToCart.bind(this);
+    this.convertPrice = this.convertPrice.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.id);
+    this.props.fetchProduct(this.props.match.params.id).then(() => {
+      this.setState({
+        product_id: this.props.product.id,
+        cart_id: this.props.cart.id,
+      });
+    });
   }
 
-  addToCart(e) {
+  addToCart() {
     const { openModal, product, currentUser } = this.props;
-    e.preventDefault();
-		console.log(product);
-    currentUser ? addItemToCart(product) : openModal("requireLogin");
+    console.log(product);
+    console.log(this.state);
+    currentUser ? console.log("HELLO") : openModal("requireLogin");
   }
 
-	convertPrice(price) {
-		return Number.parseFloat(price).toFixed(2);
-	}
+  convertPrice(price) {
+    return Number.parseFloat(price).toFixed(2);
+  }
+
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
 
   render() {
     const { product } = this.props;
@@ -58,13 +76,19 @@ export default class Product extends React.Component {
             <div className="product-title">{product.name}</div>
 
             <div className="price-stock">
-              <div className="product-price">${this.convertPrice(product.price)}</div>
+              <div className="product-price">
+                ${this.convertPrice(product.price)}
+              </div>
 
               <div className="product-stock">In Stock</div>
             </div>
             <div className="product-quantity">
               <div className="quantity-title">Quantity</div>
-              <select className="quantity" name="product">
+              <select
+                className="quantity"
+                onChange={this.update("quantity")}
+                name="product"
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
