@@ -12,6 +12,10 @@ const TopNav = ({ currentUser, logout, openModal }) => {
     </nav>
   );
 
+	const requireLogin = () => {
+		openModal("requireLogin");
+	}
+
   const cart_button = () => {
     if (currentUser) {
       return (
@@ -21,7 +25,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
       );
     } else {
       return (
-        <button className="cart nav-bttn">
+        <button className="cart nav-bttn" onClick={requireLogin}>
           <i className="fas fa-shopping-cart"></i>
         </button>
       );

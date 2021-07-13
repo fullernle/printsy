@@ -17,15 +17,17 @@
   transform: translate(-50%, -50%);
   background-color: white;
   width: 348px;
-  height: 500px;
   padding: 18px;
-  border-radius: 4%;
+  border-radius: 8px;
   margin: auto;
   box-sizing: border-box;
   transition: 2s;
 
 }
 
+.login-form-container {
+	height: 500px;
+}
 
 .login-form {
   display: flex;
@@ -37,7 +39,7 @@
   background: none;
   border: solid 2px lightgray;
   height: 38px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-top: 8px;
   transition: transform 100ms ease-out, background 150ms ease-out;
 }
