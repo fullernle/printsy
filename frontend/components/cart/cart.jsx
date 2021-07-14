@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom"
 
 export default class Cart extends Component {
   constructor(props) {
@@ -23,9 +24,17 @@ export default class Cart extends Component {
     console.log("mounted");
   }
 
-  productWrapper(product) {
+  checkout(totalPrice) {
     return (
       <div>
+        <h4>How you'll pay</h4>
+        <p>This shop processes payment through Paypal</p>
+      </div>
+    );
+  }
+  separateSellers(product) {
+    return (
+      <div className="ind-cart-wrapper">
         {product.name}
         {product.description}
         {product.quantity}
@@ -35,8 +44,6 @@ export default class Cart extends Component {
   }
 
   render() {
-    console.log("RENDERING");
-    console.log(this.state);
     if (this.props.cart === null || this.state.products === null) {
       return null;
     }
@@ -44,7 +51,11 @@ export default class Cart extends Component {
 
     return (
       <div className="cart-wrapper">
-        {products.map((product) => this.productWrapper(product))}
+        <header className="cart-header">
+          <h3>{products.length} items in your cart</h3>
+          <Link to="/">Keep Shopping</Link>
+        </header>
+        {this.separateSellers(products)}
       </div>
     );
   }
