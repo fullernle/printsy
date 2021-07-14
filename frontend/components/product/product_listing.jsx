@@ -22,7 +22,7 @@ const ProductListing = ({ product, className }) => (
         {product.seller}
       </div>
       <div className="list-product-price">
-        {product.price}
+        {Number.parseFloat(product.price).toFixed(2)}
       </div>
     </Link>
   </div>

@@ -2,11 +2,11 @@ import React from "react";
 
 class SearchBar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      search: 'Search for it all'
-    }
+      search: "Search for it all",
+    };
   }
 
   update(field) {
@@ -16,16 +16,18 @@ class SearchBar extends React.Component {
       });
   }
 
-
-  render () {
+  render() {
     return (
       <div className="search-section">
         <input
           type="text"
-          value={this.state.search}
+          placeholder={this.state.search}
           onChange={this.update("search")}
           className="search-bar"
         />
+        <button className="search-bttn">
+          <i className="fas fa-search"></i>
+        </button>
       </div>
     );
   }

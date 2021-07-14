@@ -73,7 +73,7 @@ p1 = Product.create!(
 
 ProductCategory.create!(product_id: 1, category_id: 5)
 ProductCategory.create!(product_id: 1, category_id: 6)
-# p1.photo.attach(io: URI.open("s3://printsy-dev/seed/1.png"), filename: "1.png")
+
 p1.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/1.png"), filename: "1.png")
 
 p2 = Product.create!(
@@ -85,7 +85,7 @@ p2 = Product.create!(
 ProductCategory.create!(product_id: 2, category_id: 5)
 ProductCategory.create!(product_id: 2, category_id: 6)
 ProductCategory.create!(product_id: 2, category_id: 7)
-# p2.photo.attach(io: URI.open("s3://printsy-dev/seed/2.png"), filename: "2.png")
+
 p2.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/2.png"), filename: "2.png")
 
 
@@ -96,7 +96,8 @@ p3 = Product.create!(
   seller_id: 2)
 
 ProductCategory.create!(product_id: 3, category_id: 2)
-# p3.photo.attach(io: URI.open("s3://printsy-dev/seed/3.png"), filename: "3.png")
+ProductCategory.create!(product_id: 3, category_id: 1)
+
 p3.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/3.png"), filename: "3.png")
 
 p4 = Product.create!(
@@ -106,7 +107,8 @@ p4 = Product.create!(
   seller_id: 2)
 
 ProductCategory.create!(product_id: 4, category_id: 2)
-# p4.photo.attach(io: URI.open("s3://printsy-dev/seed/4.png"), filename: "4.png")
+ProductCategory.create!(product_id: 4, category_id: 1)
+
 p4.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/4.png"), filename: "4.png")
 
 p5 = Product.create!(
@@ -116,7 +118,8 @@ p5 = Product.create!(
   seller_id: 2 )
 
 ProductCategory.create!(product_id: 5, category_id: 2)
-# p5.photo.attach(io: URI.open("s3://printsy-dev/seed/5.png"), filename: "5.png")
+ProductCategory.create!(product_id: 5, category_id: 1)
+
 p5.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/5.png"), filename: "5.png")
 
 p6 = Product.create!(
@@ -127,7 +130,7 @@ p6 = Product.create!(
 
 ProductCategory.create!(product_id: 6, category_id: 4)
 ProductCategory.create!(product_id: 6, category_id: 7)
-# p6.photo.attach(io: URI.open("s3://printsy-dev/seed/6.png"), filename: "6.png")
+
 p6.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/6.png"), filename: "6.png")
 
 p7 = Product.create!(
@@ -138,7 +141,7 @@ p7 = Product.create!(
 
 ProductCategory.create!(product_id: 7, category_id: 2)
 ProductCategory.create!(product_id: 7, category_id: 1)
-# p7.photo.attach(io: URI.open("s3://printsy-dev/seed/7.png"), filename: "7.png")
+
 p7.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/7.png"), filename: "7.png")
 
 p8 = Product.create!(
@@ -150,7 +153,7 @@ p8 = Product.create!(
 ProductCategory.create!(product_id: 8, category_id: 7)
 ProductCategory.create!(product_id: 8, category_id: 4)
 ProductCategory.create!(product_id: 8, category_id: 6)
-# p8.photo.attach(io: URI.open("s3://printsy-dev/seed/8.png"), filename: "8.png")
+
 p8.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/8.png"), filename: "8.png")
 
 p9 = Product.create!(
@@ -161,7 +164,7 @@ p9 = Product.create!(
 
 ProductCategory.create!(product_id: 9, category_id: 4)
 ProductCategory.create!(product_id: 9, category_id: 7)
-# p9.photo.attach(io: URI.open("s3://printsy-dev/seed/9.png"), filename: "9.png")
+
 p9.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/9.png"), filename: "9.png")
 
 p10 = Product.create!(
@@ -170,8 +173,10 @@ p10 = Product.create!(
   seller_id: 5)
 
 ProductCategory.create!(product_id: 10, category_id: 1)
+ProductCategory.create!(product_id: 10, category_id: 2)
 ProductCategory.create!(product_id: 10, category_id: 6)
-# p10.photo.attach(io: URI.open("s3://printsy-dev/seed/10.png"), filename: "10.png")
+ProductCategory.create!(product_id: 10, category_id: 3)
+
 p10.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/10.png"), filename: "10.png")
 
 p11 = Product.create!(
@@ -181,7 +186,8 @@ p11 = Product.create!(
   seller_id: 5)
 
 ProductCategory.create!(product_id: 11, category_id: 4)
-# p11.photo.attach(io: URI.open("s3://printsy-dev/seed/11.png"), filename: "11.png")
+ProductCategory.create!(product_id: 11, category_id: 6)
+
 p11.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/11.png"), filename: "11.png")
 
 p12 = Product.create!(
@@ -191,7 +197,8 @@ p12 = Product.create!(
   seller_id: 6)
 
 ProductCategory.create!(product_id: 12, category_id: 2)
-# p12.photo.attach(io: URI.open("s3://printsy-dev/seed/12.png"), filename: "12.png")
+ProductCategory.create!(product_id: 12, category_id: 1)
+
 p12.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/12.png"), filename: "12.png")
 
 p13 = Product.create!(
@@ -201,7 +208,7 @@ p13 = Product.create!(
   seller_id: 6)
 
 ProductCategory.create!(product_id: 13, category_id: 8)
-# p13.photo.attach(io: URI.open("s3://printsy-dev/seed/13.png"), filename: "13.png")
+
 p13.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/13.png"), filename: "13.png")
 
 p14 = Product.create!(
@@ -212,7 +219,7 @@ p14 = Product.create!(
 
 ProductCategory.create!(product_id: 14, category_id: 8)
 ProductCategory.create!(product_id: 14, category_id: 4)
-# p14.photo.attach(io: URI.open("s3://printsy-dev/seed/14.png"), filename: "14.png")
+
 p14.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/14.png"), filename: "14.png")
 
 p15 = Product.create!(
@@ -223,7 +230,8 @@ p15 = Product.create!(
 
 ProductCategory.create!(product_id: 15, category_id: 8)
 ProductCategory.create!(product_id: 15, category_id: 6)
-# p15.photo.attach(io: URI.open("s3://printsy-dev/seed/15.png"), filename: "15.png")
+ProductCategory.create!(product_id: 15, category_id: 3)
+
 p15.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/15.png"), filename: "15.png")
 
 p16 = Product.create!(
@@ -233,7 +241,7 @@ p16 = Product.create!(
   seller_id: 7)
 
 ProductCategory.create!(product_id: 16, category_id: 4)
-# p16.photo.attach(io: URI.open("s3://printsy-dev/seed/16.png"), filename: "16.png")
+
 p16.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/16.png"), filename: "16.png")
 
 p17 = Product.create!(
@@ -244,7 +252,8 @@ p17 = Product.create!(
 
 ProductCategory.create!(product_id: 17, category_id: 6)
 ProductCategory.create!(product_id: 17, category_id: 4)
-# p17.photo.attach(io: URI.open("s3://printsy-dev/seed/17.png"), filename: "17.png")
+ProductCategory.create!(product_id: 17, category_id: 3)
+
 p17.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/17.png"), filename: "17.png")
 
 p18 = Product.create!(
@@ -254,7 +263,7 @@ p18 = Product.create!(
   seller_id: 4)
 
 ProductCategory.create!(product_id: 18, category_id: 5)
-# p18.photo.attach(io: URI.open("s3://printsy-dev/seed/18.png"), filename: "18.png")
+
 p18.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/18.png"), filename: "18.png")
 
 p19 = Product.create!(
@@ -265,7 +274,7 @@ p19 = Product.create!(
 
 ProductCategory.create!(product_id: 19, category_id: 4)
 ProductCategory.create!(product_id: 19, category_id: 7)
-# p19.photo.attach(io: URI.open("s3://printsy-dev/seed/19.png"), filename: "19.png")
+
 p19.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/19.png"), filename: "19.png")
 
 p20 = Product.create!(
@@ -275,7 +284,8 @@ p20 = Product.create!(
   seller_id: 1)
 
 ProductCategory.create!(product_id: 20, category_id: 1)
-# p20.photo.attach(io: URI.open("s3://printsy-dev/seed/20.png"), filename: "20.png")
+ProductCategory.create!(product_id: 20, category_id: 2)
+
 p20.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/20.png"), filename: "20.png")
 
 p21 = Product.create!(
@@ -285,7 +295,7 @@ p21 = Product.create!(
   seller_id: 1)
 
 ProductCategory.create!(product_id: 21, category_id: 5)
-# p21.photo.attach(io: URI.open("s3://printsy-dev/seed/21.png"), filename: "21.png")
+
 p21.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/21.png"), filename: "21.png")
 
 p22 = Product.create!(
@@ -296,7 +306,7 @@ p22 = Product.create!(
 
 ProductCategory.create!(product_id: 22, category_id: 4)
 ProductCategory.create!(product_id: 22, category_id: 8)
-# p22.photo.attach(io: URI.open("s3://printsy-dev/seed/22.png"), filename: "22.png")
+
 p22.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/22.png"), filename: "22.png")
 
 p23 = Product.create!(
@@ -306,7 +316,7 @@ p23 = Product.create!(
   seller_id: 2)
 
 ProductCategory.create!(product_id: 23, category_id: 5)
-# p23.photo.attach(io: URI.open("s3://printsy-dev/seed/23.png"), filename: "23.png")
+
 p23.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/23.png"), filename: "23.png")
 
 p24 = Product.create!(
@@ -316,7 +326,8 @@ p24 = Product.create!(
   seller_id:4 )
 
 ProductCategory.create!(product_id: 24, category_id: 4)
-# p24.photo.attach(io: URI.open("s3://printsy-dev/seed/24.png"), filename: "24.png")
+ProductCategory.create!(product_id: 24, category_id: 7)
+
 p24.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/24.png"), filename: "24.png")
 
 p25 = Product.create!(
@@ -326,7 +337,8 @@ p25 = Product.create!(
   seller_id: 4)
 
 ProductCategory.create!(product_id: 25, category_id: 2)
-# p25.photo.attach(io: URI.open("s3://printsy-dev/seed/25.png"), filename: "25.png")
+ProductCategory.create!(product_id: 25, category_id: 1)
+
 p25.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/25.png"), filename: "25.png")
 
 p26 = Product.create!(
@@ -336,7 +348,7 @@ p26 = Product.create!(
   seller_id: 5)
 
 ProductCategory.create!(product_id: 26, category_id: 8)
-# p26.photo.attach(io: URI.open("s3://printsy-dev/seed/26.png"), filename: "26.png")
+
 p26.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/26.png"), filename: "26.png")
 
 p27 = Product.create!(
@@ -347,7 +359,7 @@ p27 = Product.create!(
 
 ProductCategory.create!(product_id: 27, category_id: 7)
 ProductCategory.create!(product_id: 27, category_id: 4)
-# p27.photo.attach(io: URI.open("s3://printsy-dev/seed/27.png"), filename: "27.png")
+
 p27.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/27.png"), filename: "27.png")
 
 p28 = Product.create!(
@@ -358,7 +370,7 @@ p28 = Product.create!(
 
 ProductCategory.create!(product_id: 28, category_id: 5)
 ProductCategory.create!(product_id: 28, category_id: 8)
-# p28.photo.attach(io: URI.open("s3://printsy-dev/seed/28.png"), filename: "28.png")
+
 p28.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/28.png"), filename: "28.png")
 
 p29 = Product.create!(
@@ -369,7 +381,7 @@ p29 = Product.create!(
 
 ProductCategory.create!(product_id: 29, category_id: 4)
 ProductCategory.create!(product_id: 29, category_id: 7)
-# p29.photo.attach(io: URI.open("s3://printsy-dev/seed/29.png"), filename: "29.png")
+
 p29.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/29.png"), filename: "29.png")
 
 p30 = Product.create!(
@@ -426,8 +438,10 @@ p34 = Product.create!(
 
 
 ProductCategory.create!(product_id: 34, category_id: 1)
+ProductCategory.create!(product_id: 34, category_id: 2)
 ProductCategory.create!(product_id: 34, category_id: 6)
-# p34.photo.attach(io: URI.open("s3://printsy-dev/seed/34.png"), filename: "34.png")
+ProductCategory.create!(product_id: 34, category_id: 3)
+
 p34.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/34.png"), filename: "34.png")
 
 

@@ -1,14 +1,49 @@
 import React from "react";
-import { showProduct } from "../../util/product_util";
 import ProductDropDown from "./product_dropdown";
 
 export default class Product extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      quantity: 1,
+      cart_id: null,
+      product_id: null,
+    };
+
+    this.addToCart = this.addToCart.bind(this);
+    this.convertPrice = this.convertPrice.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.match.params.id);
+    this.props.fetchProduct(this.props.match.params.id).then(() => {
+			this.props.currentUser ? 
+				this.setState({
+					product_id: this.props.product.id,
+					cart_id: this.props.cart.id,
+				}) : 
+				this.setState({
+					product_id: this.props.product.id
+				})
+    });
+  }
+
+  addToCart() {
+    const { openModal, currentUser } = this.props;
+		console.log(this.state);
+		const cartItem = Object.assign({}, this.state);
+    currentUser ? this.props.addItemToCart(cartItem) : openModal("requireLogin");
+  }
+
+  convertPrice(price) {
+    return Number.parseFloat(price).toFixed(2);
+  }
+
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
   }
 
   render() {
@@ -43,13 +78,19 @@ export default class Product extends React.Component {
             <div className="product-title">{product.name}</div>
 
             <div className="price-stock">
-              <div className="product-price">${parseFloat(product.price)}</div>
+              <div className="product-price">
+                ${this.convertPrice(product.price)}
+              </div>
 
               <div className="product-stock">In Stock</div>
             </div>
             <div className="product-quantity">
               <div className="quantity-title">Quantity</div>
-              <select className="quantity" name="product">
+              <select
+                className="quantity"
+                onChange={this.update("quantity")}
+                name="product"
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -63,14 +104,12 @@ export default class Product extends React.Component {
               </select>
             </div>
 
-            {/* <div>
-              <button className="buy-it-now">Buy It Now</button>
-            </div> */}
             <div>
-              <button className="add-to-cart">Add to Cart</button>
+              <button className="add-to-cart" onClick={this.addToCart}>
+                Add to Cart
+              </button>
             </div>
             <div className="product-wants">
-              {/* <div className="product-icons">🛒</div> */}
               <img
                 className="product-icons"
                 src="https://images.emojiterra.com/twitter/512px/1f6d2.png"
@@ -82,11 +121,11 @@ export default class Product extends React.Component {
               </div>
             </div>
             <div className="arrives-by">
-              <img className="product-icons-truck"
+              <img
+                className="product-icons-truck"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNSlZWjRncneixPudaZn2u2xOCCXD2wkfX2R2olOrSfkGpQG-a9BxpuKRUgJ-s0tRUgAY&usqp=CAU"
                 alt="shipping cart icon"
               />
-              {/* <div className="product-icons">🚛</div> */}
               <div className="product-misc-text">
                 Arrives by tomorrow if you order today. Hooray! This item ships
                 free.
