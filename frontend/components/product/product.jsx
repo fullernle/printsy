@@ -17,10 +17,14 @@ export default class Product extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.id).then(() => {
-      this.setState({
-        product_id: this.props.product.id,
-        cart_id: this.props.cart.id,
-      });
+			this.props.currentUser ? 
+				this.setState({
+					product_id: this.props.product.id,
+					cart_id: this.props.cart.id,
+				}) : 
+				this.setState({
+					product_id: this.props.product.id
+				})
     });
   }
 
