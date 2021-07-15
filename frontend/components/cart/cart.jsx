@@ -42,7 +42,7 @@ export default class Cart extends Component {
   }
 
   filterProducts(sellers, products) {
-    const indCarts = {};
+    const indCarts = [];
     sellers.forEach((id) => {
       const seller = [];
       products.forEach((product) => {
@@ -51,19 +51,33 @@ export default class Cart extends Component {
           seller.push(product);
         }
       });
-			indCarts[id] = seller;
+      indCarts.push(seller);
     });
     return indCarts;
   }
 
   individualCarts(products) {
     const uniqueSellers = this.filterSellers(products);
-    const indCart = this.filterProducts(uniqueSellers, products);
-	}
+    const indCarts = this.filterProducts(uniqueSellers, products);
+    return indCarts;
+  }
 
-	displayCarts(carts) {
+  displayCarts(products) {
+    const carts = this.individualCarts(products);
+		
+    return carts.map((cart) => {
+      return this.renderCart(cart);
+    });
+  }
 
-	}
+  renderCart(cart) {
+    const seller = cart[0].sellerName;
+    return (
+      <div>
+        <h4>{seller}</h4>
+      </div>
+    );
+  }
 
   render() {
     if (this.props.cart === null || this.state.products === null) {
@@ -77,7 +91,7 @@ export default class Cart extends Component {
           <h3>{products.length} items in your cart</h3>
           <Link to="/">Keep Shopping</Link>
         </header>
-        {this.individualCarts(products)}
+        {this.displayCarts(products)}
       </div>
     );
   }
