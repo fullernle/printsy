@@ -32,7 +32,11 @@ export default class Product extends React.Component {
     const { openModal, currentUser } = this.props;
 		console.log(this.state);
 		const cartItem = Object.assign({}, this.state);
-    currentUser ? this.props.addItemToCart(cartItem) : openModal("requireLogin");
+		if (currentUser) {
+			this.props.addItemToCart(cartItem) 
+		} else {
+			openModal("requireLogin");
+		}
   }
 
   convertPrice(price) {

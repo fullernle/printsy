@@ -40,6 +40,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+	margin-top: 24px;
+	padding: 0 12px;
 }
 
 .ind-cart-wrapper {
@@ -50,6 +52,7 @@
 
 .detail-wrapper {
   display: flex;
+	margin-bottom: 24px;
 }
 
 .photo-wrapper {
@@ -68,4 +71,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+	width: 60%;
+}
+
+.quantitative-details {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
+}
+
+.ind-quantity {
+	width: 40px;
+	height: 25px;
+}
+
+.non-photo-wrapper {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
 }

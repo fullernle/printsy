@@ -92,78 +92,85 @@ export default class Cart extends Component {
                 <img src={`${product.photoUrl}`} alt="product image" />
               </div>
 
-              <div className="fine-details">
-                <p>{product.name}</p>
-                <button>Remove</button>
-              </div>
+              <div className="non-photo-wrapper">
+                <div className="fine-details">
+                  <p>{product.name}</p>
+                  <button>Remove</button>
+                </div>
 
-              <div className="quantitative-details">
-                <select
-                  className="ind-quantity"
-                  name={`${product.name}`}
-                  onChange={this.updateQuantity(product.name)}
-                >
-                  <option
-                    value="1"
-                    selected={product.quantity === 1 ? true : false}
+                <div className="quantitative-details">
+                  <select
+                    className="ind-quantity"
+                    name={`${product.name}`}
+                    onChange={this.updateQuantity(product.name)}
                   >
-                    1
-                  </option>
-                  <option
-                    value="2"
-                    selected={product.quantity === 2 ? true : false}
-                  >
-                    2
-                  </option>
-                  <option
-                    value="3"
-                    selected={product.quantity === 3 ? true : false}
-                  >
-                    3
-                  </option>
-                  <option
-                    value="5"
-                    selected={product.quantity === 4 ? true : false}
-                  >
-                    5
-                  </option>
-                  <option
-                    value="4"
-                    selected={product.quantity === 5 ? true : false}
-                  >
-                    4
-                  </option>
-                  <option
-                    value="6"
-                    selected={product.quantity === 6 ? true : false}
-                  >
-                    6
-                  </option>
-                  <option
-                    value="7"
-                    selected={product.quantity === 7 ? true : false}
-                  >
-                    7
-                  </option>
-                  <option
-                    value="8"
-                    selected={product.quantity === 8 ? true : false}
-                  >
-                    8
-                  </option>
-                  <option
-                    value="9"
-                    selected={product.quantity === 9 ? true : false}
-                  >
-                    9
-                  </option>
-                  <option
-                    value="10"
-                    selected={product.quantity === 10 ? true : false}
-                  >
-                    10
-                  </option>
-                </select>
+                    <option
+                      value="1"
+                      selected={product.quantity === 1 ? true : false}
+                    >
+                      1
+                    </option>
+                    <option
+                      value="2"
+                      selected={product.quantity === 2 ? true : false}
+                    >
+                      2
+                    </option>
+                    <option
+                      value="3"
+                      selected={product.quantity === 3 ? true : false}
+                    >
+                      3
+                    </option>
+                    <option
+                      value="5"
+                      selected={product.quantity === 4 ? true : false}
+                    >
+                      5
+                    </option>
+                    <option
+                      value="4"
+                      selected={product.quantity === 5 ? true : false}
+                    >
+                      4
+                    </option>
+                    <option
+                      value="6"
+                      selected={product.quantity === 6 ? true : false}
+                    >
+                      6
+                    </option>
+                    <option
+                      value="7"
+                      selected={product.quantity === 7 ? true : false}
+                    >
+                      7
+                    </option>
+                    <option
+                      value="8"
+                      selected={product.quantity === 8 ? true : false}
+                    >
+                      8
+                    </option>
+                    <option
+                      value="9"
+                      selected={product.quantity === 9 ? true : false}
+                    >
+                      9
+                    </option>
+                    <option
+                      value="10"
+                      selected={product.quantity === 10 ? true : false}
+                    >
+                      10
+                    </option>
+                  </select>
+
+                  <div>
+                    <div>{product.price * product.quantity}</div>
+                    <div>{product.quantity > 1 ? product.price : ""}</div>
+                  </div>
+                </div>
               </div>
             </div>
           );
