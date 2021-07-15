@@ -64,17 +64,110 @@ export default class Cart extends Component {
 
   displayCarts(products) {
     const carts = this.individualCarts(products);
-		
+
     return carts.map((cart) => {
       return this.renderCart(cart);
     });
   }
 
+  updateQuantity(name) {
+    return (e) => {
+      console.log(e.currentTarget.value);
+    };
+  }
   renderCart(cart) {
     const seller = cart[0].sellerName;
+    console.log(cart);
     return (
-      <div>
-        <h4>{seller}</h4>
+      <div key={cart[0].seller_id} className="ind-cart-wrapper">
+        <header className="ind-seller-header">
+          <h4>{seller}</h4>
+          <p>Contact Shop</p>
+        </header>
+        {cart.map((product) => {
+          let quantity = product.quantity;
+          return (
+            <div className="detail-wrapper">
+              <div className="photo-wrapper">
+                <img src={`${product.photoUrl}`} alt="product image" />
+              </div>
+
+              <div className="fine-details">
+                <p>{product.name}</p>
+                <button>Remove</button>
+              </div>
+
+              <div className="quantitative-details">
+                <select
+                  className="ind-quantity"
+                  name={`${product.name}`}
+                  onChange={this.updateQuantity(product.name)}
+                >
+                  <option
+                    value="1"
+                    selected={product.quantity === 1 ? true : false}
+                  >
+                    1
+                  </option>
+                  <option
+                    value="2"
+                    selected={product.quantity === 2 ? true : false}
+                  >
+                    2
+                  </option>
+                  <option
+                    value="3"
+                    selected={product.quantity === 3 ? true : false}
+                  >
+                    3
+                  </option>
+                  <option
+                    value="5"
+                    selected={product.quantity === 4 ? true : false}
+                  >
+                    5
+                  </option>
+                  <option
+                    value="4"
+                    selected={product.quantity === 5 ? true : false}
+                  >
+                    4
+                  </option>
+                  <option
+                    value="6"
+                    selected={product.quantity === 6 ? true : false}
+                  >
+                    6
+                  </option>
+                  <option
+                    value="7"
+                    selected={product.quantity === 7 ? true : false}
+                  >
+                    7
+                  </option>
+                  <option
+                    value="8"
+                    selected={product.quantity === 8 ? true : false}
+                  >
+                    8
+                  </option>
+                  <option
+                    value="9"
+                    selected={product.quantity === 9 ? true : false}
+                  >
+                    9
+                  </option>
+                  <option
+                    value="10"
+                    selected={product.quantity === 10 ? true : false}
+                  >
+                    10
+                  </option>
+                </select>
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }
