@@ -99,3 +99,50 @@
 	margin-top: 12px;
   width: 100%;
 }
+
+.price-total, .shipping {
+	display: flex;
+	justify-content: space-between;
+}
+
+.price-total {
+	margin-bottom: 12px;
+}
+
+.shipping {
+	border-top: 1px solid grey;
+	padding-top: 12px;
+	margin-bottom: 36px;
+}
+
+.bttn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 12px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 24px;
+  transition: transform 100ms ease-out, background 150ms ease-out;
+}
+
+.bttn:hover {
+  background-color: rgba(182, 182, 182, 0.541);
+  transform: scale(1.01);
+}
+
+.chkt {
+	background: black;
+	color: white;
+}
+
+.chkt:hover {
+	background-color: black;
+}
+
+.rmv {
+	width: 80px;
+	font-size: 13px;
+	font-weight: 600;
+}

@@ -111,7 +111,7 @@ export default class Cart extends Component {
                 <div className="non-photo-wrapper">
                   <div className="fine-details">
                     <p>{product.name}</p>
-                    <button>Remove</button>
+                    <button className="rmv bttn">Remove</button>
                   </div>
 
                   <div className="quantitative-details">
@@ -184,10 +184,14 @@ export default class Cart extends Component {
 
                     <section>
                       <div className="total-product-price">
-                        {product.price * product.quantity}
+                        ${product.price * product.quantity}
                       </div>
                       <div className="ind-product-price">
-                        {product.quantity > 1 ? product.price : ""}
+                        {product.quantity > 1 ? (
+                          <span className="mini-price"> (${product.price} each)</span>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </section>
                   </div>
@@ -204,16 +208,16 @@ export default class Cart extends Component {
   renderCheckout(totalPrice) {
     return (
       <div className="checkout-wrapper">
-        <div>
+        <div className="price-total">
           <span>Item(s) total</span>
-          <span>{totalPrice}</span>
+          <span>${totalPrice}</span>
         </div>
-        <div>
+        <div className="shipping">
           <span>Shipping</span>
           <span>FREE</span>
         </div>
 
-        <button>Checkout</button>
+        <button className="chkt bttn">Checkout</button>
       </div>
     );
   }
