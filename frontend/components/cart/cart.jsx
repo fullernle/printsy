@@ -70,111 +70,150 @@ export default class Cart extends Component {
     });
   }
 
-  updateQuantity(name) {
+  updateQuantity(currProduct) {
     return (e) => {
-      console.log(e.currentTarget.value);
+      const newQuant = e.currentTarget.value;
+      let  product = this.state.products.filter((obj) => obj.name === currProduct.name);
+      product[0].quantity = parseInt(newQuant);
+			product = product[0];
+
+      const updatedCartItem = {
+        id: product.cart_item_id,
+        cart_id: product.cart_id,
+        product_id: product.id,
+        quantity: newQuant,
+      };
+			
+      console.log(updatedCartItem);
+      this.props.updateCartItem(updatedCartItem);
     };
   }
+
   renderCart(cart) {
     const seller = cart[0].sellerName;
-    console.log(cart);
+    let totalPrice = 0;
     return (
       <div key={cart[0].seller_id} className="ind-cart-wrapper">
-        <header className="ind-seller-header">
-          <h4>{seller}</h4>
-          <p>Contact Shop</p>
-        </header>
-        {cart.map((product) => {
-          let quantity = product.quantity;
-          return (
-            <div className="detail-wrapper">
-              <div className="photo-wrapper">
-                <img src={`${product.photoUrl}`} alt="product image" />
-              </div>
+        <div className="non-checkout-wrapper">
+          <header className="ind-seller-header">
+            <h4>{seller}</h4>
+            <p>Contact Shop</p>
+          </header>
 
-              <div className="non-photo-wrapper">
-                <div className="fine-details">
-                  <p>{product.name}</p>
-                  <button>Remove</button>
+          {cart.map((product) => {
+            totalPrice += product.quantity * product.price;
+            return (
+              <div className="detail-wrapper">
+                <div className="photo-wrapper">
+                  <img src={`${product.photoUrl}`} alt="product image" />
                 </div>
 
-                <div className="quantitative-details">
-                  <select
-                    className="ind-quantity"
-                    name={`${product.name}`}
-                    onChange={this.updateQuantity(product.name)}
-                  >
-                    <option
-                      value="1"
-                      selected={product.quantity === 1 ? true : false}
-                    >
-                      1
-                    </option>
-                    <option
-                      value="2"
-                      selected={product.quantity === 2 ? true : false}
-                    >
-                      2
-                    </option>
-                    <option
-                      value="3"
-                      selected={product.quantity === 3 ? true : false}
-                    >
-                      3
-                    </option>
-                    <option
-                      value="5"
-                      selected={product.quantity === 4 ? true : false}
-                    >
-                      5
-                    </option>
-                    <option
-                      value="4"
-                      selected={product.quantity === 5 ? true : false}
-                    >
-                      4
-                    </option>
-                    <option
-                      value="6"
-                      selected={product.quantity === 6 ? true : false}
-                    >
-                      6
-                    </option>
-                    <option
-                      value="7"
-                      selected={product.quantity === 7 ? true : false}
-                    >
-                      7
-                    </option>
-                    <option
-                      value="8"
-                      selected={product.quantity === 8 ? true : false}
-                    >
-                      8
-                    </option>
-                    <option
-                      value="9"
-                      selected={product.quantity === 9 ? true : false}
-                    >
-                      9
-                    </option>
-                    <option
-                      value="10"
-                      selected={product.quantity === 10 ? true : false}
-                    >
-                      10
-                    </option>
-                  </select>
+                <div className="non-photo-wrapper">
+                  <div className="fine-details">
+                    <p>{product.name}</p>
+                    <button>Remove</button>
+                  </div>
 
-                  <div>
-                    <div>{product.price * product.quantity}</div>
-                    <div>{product.quantity > 1 ? product.price : ""}</div>
+                  <div className="quantitative-details">
+                    <select
+                      className="ind-quantity"
+                      name={`${product.name}`}
+                      onChange={this.updateQuantity(product)}
+                    >
+                      <option
+                        value="1"
+                        selected={product.quantity === 1 ? true : false}
+                      >
+                        1
+                      </option>
+                      <option
+                        value="2"
+                        selected={product.quantity === 2 ? true : false}
+                      >
+                        2
+                      </option>
+                      <option
+                        value="3"
+                        selected={product.quantity === 3 ? true : false}
+                      >
+                        3
+                      </option>
+                      <option
+                        value="5"
+                        selected={product.quantity === 4 ? true : false}
+                      >
+                        5
+                      </option>
+                      <option
+                        value="4"
+                        selected={product.quantity === 5 ? true : false}
+                      >
+                        4
+                      </option>
+                      <option
+                        value="6"
+                        selected={product.quantity === 6 ? true : false}
+                      >
+                        6
+                      </option>
+                      <option
+                        value="7"
+                        selected={product.quantity === 7 ? true : false}
+                      >
+                        7
+                      </option>
+                      <option
+                        value="8"
+                        selected={product.quantity === 8 ? true : false}
+                      >
+                        8
+                      </option>
+                      <option
+                        value="9"
+                        selected={product.quantity === 9 ? true : false}
+                      >
+                        9
+                      </option>
+                      <option
+                        value="10"
+                        selected={product.quantity === 10 ? true : false}
+                      >
+                        10
+                      </option>
+                    </select>
+
+                    <section>
+                      <div className="total-product-price">
+                        {product.price * product.quantity}
+                      </div>
+                      <div className="ind-product-price">
+                        {product.quantity > 1 ? product.price : ""}
+                      </div>
+                    </section>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        {this.renderCheckout(totalPrice)}
+      </div>
+    );
+  }
+
+  renderCheckout(totalPrice) {
+    return (
+      <div className="checkout-wrapper">
+        <div>
+          <span>Item(s) total</span>
+          <span>{totalPrice}</span>
+        </div>
+        <div>
+          <span>Shipping</span>
+          <span>FREE</span>
+        </div>
+
+        <button>Checkout</button>
       </div>
     );
   }
