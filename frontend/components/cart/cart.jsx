@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -21,7 +21,6 @@ export default class Cart extends Component {
         userId: cart.user_id,
       });
     });
-    console.log("mounted");
   }
 
   checkout(totalPrice) {
@@ -32,16 +31,39 @@ export default class Cart extends Component {
       </div>
     );
   }
-  separateSellers(product) {
-    return (
-      <div className="ind-cart-wrapper">
-        {product.name}
-        {product.description}
-        {product.quantity}
-        {product.price}
-      </div>
-    );
+
+  filterSellers(products) {
+    const uniqueSellers = [];
+    products.forEach((product) => {
+      if (!uniqueSellers.includes(product.seller_id))
+        uniqueSellers.push(product.seller_id);
+    });
+    return uniqueSellers;
   }
+
+  filterProducts(sellers, products) {
+    const indCarts = {};
+    sellers.forEach((id) => {
+      const seller = [];
+      products.forEach((product) => {
+        const sellerId = product.seller_id;
+        if (id === sellerId) {
+          seller.push(product);
+        }
+      });
+			indCarts[id] = seller;
+    });
+    return indCarts;
+  }
+
+  individualCarts(products) {
+    const uniqueSellers = this.filterSellers(products);
+    const indCart = this.filterProducts(uniqueSellers, products);
+	}
+
+	displayCarts(carts) {
+
+	}
 
   render() {
     if (this.props.cart === null || this.state.products === null) {
@@ -55,7 +77,7 @@ export default class Cart extends Component {
           <h3>{products.length} items in your cart</h3>
           <Link to="/">Keep Shopping</Link>
         </header>
-        {this.separateSellers(products)}
+        {this.individualCarts(products)}
       </div>
     );
   }
