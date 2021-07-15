@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import SearchBar from "./search_bar";
 import DropDown from "./dropdown";
 
-const TopNav = ({ currentUser, logout, openModal }) => {
+const NavBar = ({ currentUser, logout, openModal }) => {
   const login_button = () => (
     <nav className="login-signup">
       <button className="login nav-bttn" onClick={() => openModal("login")}>
@@ -116,4 +116,4 @@ const TopNav = ({ currentUser, logout, openModal }) => {
   );
 };
 
-export default TopNav;
+export default NavBar;

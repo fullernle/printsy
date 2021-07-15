@@ -4,16 +4,16 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 import CategoryContainer from "./category/category_container";
 import SplashContainer from "./splash/splash_container";
-import TopNavContainer from "./nav/top_nav_container";
 import CartContainer from "./cart/cart_container";
 import Modal from "./modal/modal";
 import ProductContainer from "./product/product_container";
+import NavBarContainer from "./nav/nav_bar_container";
 
 const App = () => (
   <>
     <Modal />
     <header>
-      <TopNavContainer />
+      <NavBarContainer />
     </header>
 
     <Switch>
