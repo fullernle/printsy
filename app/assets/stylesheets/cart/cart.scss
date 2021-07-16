@@ -37,12 +37,11 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 24px;
-  padding: 0 12px;
+  padding-left: 12px;
 }
 
 .ind-cart-wrapper {
   display: flex;
-  border-bottom: 1px solid grey;
   justify-content: space-between;
 }
 
@@ -50,6 +49,27 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+	min-height: 350px;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.452);
+}
+
+.ind-seller-header > h4, .total-product-price, .price-total {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.total-product-price {
+	text-align: right;
+}
+
+.price-total > span {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.contact, .mini-price {
+  font-size: 13px;
+	color: hsla(0, 0%, 50%, 0.979);
 }
 
 .checkout-wrapper {
@@ -57,6 +77,9 @@
   display: flex;
   flex-direction: column;
   width: 36%;
+	height: 280px;
+	padding: 24px;
+	box-shadow: 0 4px 20px rgba(34, 34, 34, 15%);
 }
 
 .detail-wrapper {
@@ -82,6 +105,10 @@
   width: 60%;
 }
 
+.fine-details > p {
+  font-size: 16px;
+}
+
 .quantitative-details {
   display: flex;
   width: 40%;
@@ -89,30 +116,48 @@
 }
 
 .ind-quantity {
-  width: 40px;
-  height: 25px;
+  width: 80px;
+  height: 40px;
+  padding: 0 8px;
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 0 1px 12px 0 rgba(34, 34, 34, 20%);
 }
 
 .non-photo-wrapper {
   display: flex;
   justify-content: space-around;
-	margin-top: 12px;
+  margin-top: 12px;
   width: 100%;
 }
 
-.price-total, .shipping {
-	display: flex;
-	justify-content: space-between;
+.price-total,
+.shipping {
+  display: flex;
+  justify-content: space-between;
 }
 
 .price-total {
+  margin-bottom: 12px;
+}
+
+.sub-total {
+	display: flex;
+	justify-content: space-between;
+  border-top: 1px solid hsla(0, 0%, 50%, 0.452);
+  padding-top: 12px;
 	margin-bottom: 12px;
 }
 
 .shipping {
-	border-top: 1px solid grey;
-	padding-top: 12px;
-	margin-bottom: 36px;
+  margin-bottom: 36px;
+}
+
+.shipping > span {
+	font-size: 16px;
+	color: green;
 }
 
 .bttn {
@@ -133,16 +178,18 @@
 }
 
 .chkt {
-	background: black;
-	color: white;
+  background: black;
+  width: 95%;
+  color: white;
+  align-self: center;
 }
 
 .chkt:hover {
-	background-color: black;
+  background-color: black;
 }
 
 .rmv {
-	width: 80px;
-	font-size: 13px;
-	font-weight: 600;
+  width: 80px;
+  font-size: 13px;
+  font-weight: 600;
 }

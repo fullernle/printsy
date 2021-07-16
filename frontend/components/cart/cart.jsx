@@ -97,7 +97,7 @@ export default class Cart extends Component {
         <div className="non-checkout-wrapper">
           <header className="ind-seller-header">
             <h4>{seller}</h4>
-            <p>Contact Shop</p>
+            <p className="contact">Contact Shop</p>
           </header>
 
           {cart.map((product) => {
@@ -111,6 +111,7 @@ export default class Cart extends Component {
                 <div className="non-photo-wrapper">
                   <div className="fine-details">
                     <p>{product.name}</p>
+                    <p>{product.description}</p>
                     <button className="rmv bttn">Remove</button>
                   </div>
 
@@ -184,11 +185,14 @@ export default class Cart extends Component {
 
                     <section>
                       <div className="total-product-price">
-                        ${product.price * product.quantity}
+                        ${(product.price * product.quantity).toFixed(2)}
                       </div>
                       <div className="ind-product-price">
                         {product.quantity > 1 ? (
-                          <span className="mini-price"> (${product.price} each)</span>
+                          <span className="mini-price">
+                            {" "}
+                            (${product.price.toFixed(2)} each)
+                          </span>
                         ) : (
                           ""
                         )}
@@ -200,7 +204,7 @@ export default class Cart extends Component {
             );
           })}
         </div>
-        {this.renderCheckout(totalPrice)}
+        {this.renderCheckout(totalPrice.toFixed(2))}
       </div>
     );
   }
@@ -209,11 +213,17 @@ export default class Cart extends Component {
     return (
       <div className="checkout-wrapper">
         <div className="price-total">
-          <span>Item(s) total</span>
+          Item(s) total
           <span>${totalPrice}</span>
         </div>
+
+        <div className="sub-total">
+          Subtotal
+          <span>${totalPrice}</span>
+        </div>
+
         <div className="shipping">
-          <span>Shipping</span>
+          Shipping
           <span>FREE</span>
         </div>
 
