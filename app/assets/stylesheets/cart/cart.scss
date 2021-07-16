@@ -49,27 +49,30 @@
   display: flex;
   flex-direction: column;
   width: 60%;
-	min-height: 350px;
+  min-height: 350px;
   border-bottom: 1px solid hsla(0, 0%, 50%, 0.452);
 }
 
-.ind-seller-header > h4, .total-product-price, .price-total {
+.ind-seller-header > h4,
+.total-product-price,
+.price-total {
   font-size: 16px;
   font-weight: 600;
 }
 
 .total-product-price {
-	text-align: right;
+  text-align: right;
 }
 
 .price-total > span {
-	font-size: 16px;
-	font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.contact, .mini-price {
+.contact,
+.mini-price {
   font-size: 13px;
-	color: hsla(0, 0%, 50%, 0.979);
+  color: hsla(0, 0%, 50%, 0.979);
 }
 
 .checkout-wrapper {
@@ -77,9 +80,9 @@
   display: flex;
   flex-direction: column;
   width: 36%;
-	height: 280px;
-	padding: 24px;
-	box-shadow: 0 4px 20px rgba(34, 34, 34, 15%);
+  height: 280px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 15%);
 }
 
 .detail-wrapper {
@@ -144,11 +147,11 @@
 }
 
 .sub-total {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   border-top: 1px solid hsla(0, 0%, 50%, 0.452);
   padding-top: 12px;
-	margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .shipping {
@@ -156,8 +159,8 @@
 }
 
 .shipping > span {
-	font-size: 16px;
-	color: green;
+  font-size: 16px;
+  color: green;
 }
 
 .bttn {
@@ -188,8 +191,52 @@
   background-color: black;
 }
 
+.chkt:active {
+  background: rgb(67, 67, 67);
+}
+
 .rmv {
   width: 80px;
   font-size: 13px;
   font-weight: 600;
+}
+
+.rmv:active {
+  background-color: rgba(70, 70, 70, 0.761);
+}
+
+.empty-cart {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 64px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-cart > h2 {
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 12px;
+}
+
+.empty-cart > a {
+  text-decoration: underline;
+  color: rgb(34, 34, 34);
+	font-size: 16px;
+	margin-bottom: 64px;
+}
+.empty-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+	font-size: 13px;
+}
+
+.fas {
+	margin-right: 8px;
 }

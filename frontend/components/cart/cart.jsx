@@ -10,6 +10,8 @@ export default class Cart extends Component {
       id: null,
       userId: null,
     };
+
+    this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
@@ -73,9 +75,11 @@ export default class Cart extends Component {
   updateQuantity(currProduct) {
     return (e) => {
       const newQuant = e.currentTarget.value;
-      let  product = this.state.products.filter((obj) => obj.name === currProduct.name);
+      let product = this.state.products.filter(
+        (obj) => obj.name === currProduct.name
+      );
       product[0].quantity = parseInt(newQuant);
-			product = product[0];
+      product = product[0];
 
       const updatedCartItem = {
         id: product.cart_item_id,
@@ -83,10 +87,21 @@ export default class Cart extends Component {
         product_id: product.id,
         quantity: newQuant,
       };
-			
-      console.log(updatedCartItem);
+
       this.props.updateCartItem(updatedCartItem);
     };
+  }
+
+  removeItem(product) {
+    this.props.removeCartItem(product.cart_item_id).then(() => {
+      const products = this.state.products;
+      const index = products.findIndex(
+        (obj) => obj.cart_item_id === product.cart_item_id
+      );
+      products.splice(index, 1);
+
+      this.setState({ products });
+    });
   }
 
   renderCart(cart) {
@@ -103,7 +118,7 @@ export default class Cart extends Component {
           {cart.map((product) => {
             totalPrice += product.quantity * product.price;
             return (
-              <div className="detail-wrapper">
+              <div className="detail-wrapper" key={product.id}>
                 <div className="photo-wrapper">
                   <img src={`${product.photoUrl}`} alt="product image" />
                 </div>
@@ -112,75 +127,31 @@ export default class Cart extends Component {
                   <div className="fine-details">
                     <p>{product.name}</p>
                     <p>{product.description}</p>
-                    <button className="rmv bttn">Remove</button>
+                    <button
+                      className="rmv bttn"
+                      onClick={() => this.removeItem(product)}
+                    >
+                      Remove
+                    </button>
                   </div>
 
                   <div className="quantitative-details">
                     <select
                       className="ind-quantity"
                       name={`${product.name}`}
+                      value={product.quantity}
                       onChange={this.updateQuantity(product)}
                     >
-                      <option
-                        value="1"
-                        selected={product.quantity === 1 ? true : false}
-                      >
-                        1
-                      </option>
-                      <option
-                        value="2"
-                        selected={product.quantity === 2 ? true : false}
-                      >
-                        2
-                      </option>
-                      <option
-                        value="3"
-                        selected={product.quantity === 3 ? true : false}
-                      >
-                        3
-                      </option>
-                      <option
-                        value="5"
-                        selected={product.quantity === 4 ? true : false}
-                      >
-                        5
-                      </option>
-                      <option
-                        value="4"
-                        selected={product.quantity === 5 ? true : false}
-                      >
-                        4
-                      </option>
-                      <option
-                        value="6"
-                        selected={product.quantity === 6 ? true : false}
-                      >
-                        6
-                      </option>
-                      <option
-                        value="7"
-                        selected={product.quantity === 7 ? true : false}
-                      >
-                        7
-                      </option>
-                      <option
-                        value="8"
-                        selected={product.quantity === 8 ? true : false}
-                      >
-                        8
-                      </option>
-                      <option
-                        value="9"
-                        selected={product.quantity === 9 ? true : false}
-                      >
-                        9
-                      </option>
-                      <option
-                        value="10"
-                        selected={product.quantity === 10 ? true : false}
-                      >
-                        10
-                      </option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
 
                     <section>
@@ -232,12 +203,23 @@ export default class Cart extends Component {
     );
   }
 
-  render() {
-    if (this.props.cart === null || this.state.products === null) {
-      return null;
-    }
-    const { products } = this.state;
+  renderEmpty() {
+    return (
+      <>
+        <div className="empty-cart">
+          <h2>Your cart is empty.</h2>
+          <Link to="/">Discover something unique to fill it up</Link>
+        </div>
 
+        <footer className="empty-footer">
+          <i className="fas fa-leaf"></i>
+          Printsy offsets carbon emissions from every delivery
+        </footer>
+      </>
+    );
+  }
+
+  renderNonEmpty() {
     return (
       <div className="cart-wrapper">
         <header className="cart-header">
@@ -247,5 +229,13 @@ export default class Cart extends Component {
         {this.displayCarts(products)}
       </div>
     );
+  }
+
+  render() {
+    if (this.props.cart === null || this.state.products === null) {
+      return null;
+    }
+    const { products } = this.state;
+    return products.length > 0 ? this.renderNonEmpty(products) : this.renderEmpty();
   }
 }

@@ -30,7 +30,6 @@ export default class Product extends React.Component {
 
   addToCart() {
     const { openModal, currentUser } = this.props;
-		console.log(this.state);
 		const cartItem = Object.assign({}, this.state);
 		if (currentUser) {
 			this.props.addItemToCart(cartItem) 
