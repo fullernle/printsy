@@ -25,15 +25,6 @@ export default class Cart extends Component {
     });
   }
 
-  checkout(totalPrice) {
-    return (
-      <div>
-        <h4>How you'll pay</h4>
-        <p>This shop processes payment through Paypal</p>
-      </div>
-    );
-  }
-
   filterSellers(products) {
     const uniqueSellers = [];
     products.forEach((product) => {
@@ -119,13 +110,13 @@ export default class Cart extends Component {
             totalPrice += product.quantity * product.price;
             return (
               <div className="detail-wrapper" key={product.id}>
-                <div className="photo-wrapper">
+                <div className="cart-photo-wrapper">
                   <img src={`${product.photoUrl}`} alt="product image" />
                 </div>
 
                 <div className="non-photo-wrapper">
                   <div className="fine-details">
-                    <p>{product.name}</p>
+                    <Link to={`/products/${product.id}`}>{product.name}</Link>
                     <p>{product.description}</p>
                     <button
                       className="rmv bttn"

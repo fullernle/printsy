@@ -28,7 +28,7 @@ export default class Category extends React.Component {
 
       return (
         <div className="category-page">
-          <div>sidebar placeholder</div>
+					<h1>{this.props.category.name}</h1>
           <div className="products-list">
             {products.map((product) => (
               <ProductListing

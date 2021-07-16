@@ -87,16 +87,20 @@
 
 .detail-wrapper {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 100px;
 }
 
-.photo-wrapper {
+.cart-photo-wrapper {
   width: 212px;
   height: 160px;
+  overflow: hidden;
+	border-radius: 8px;
+	margin-right: 8px;
 }
 
-.photo-wrapper > img {
-  width: 100%;
+.cart-photo-wrapper > img {
+  max-height: 100%;
+	max-width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -110,6 +114,16 @@
 
 .fine-details > p {
   font-size: 16px;
+}
+
+.fine-details > a {
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fine-details > a:hover {
+  text-decoration: underline;
 }
 
 .quantitative-details {
@@ -225,8 +239,8 @@
 .empty-cart > a {
   text-decoration: underline;
   color: rgb(34, 34, 34);
-	font-size: 16px;
-	margin-bottom: 64px;
+  font-size: 16px;
+  margin-bottom: 64px;
 }
 .empty-footer {
   max-width: 1400px;
@@ -234,9 +248,9 @@
   width: 800px;
   display: flex;
   justify-content: center;
-	font-size: 13px;
+  font-size: 13px;
 }
 
 .fas {
-	margin-right: 8px;
+  margin-right: 8px;
 }
