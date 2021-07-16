@@ -55,6 +55,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Fashion
         </NavLink>
+				
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -63,6 +64,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Games
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -71,6 +73,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Home
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -79,6 +82,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Accesories
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -87,6 +91,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Toys
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -95,6 +100,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Entertainment
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -103,6 +109,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Art
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"

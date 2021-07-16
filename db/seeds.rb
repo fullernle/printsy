@@ -1074,8 +1074,8 @@ p77 = Product.create!(
 )
 
 
-ProductCategory.create!(product_id: 77, category_id: 1)
-ProductCategory.create!(product_id: 77, category_id: 6)
+ProductCategory.create!(product_id: 77, category_id: 5)
+ProductCategory.create!(product_id: 77, category_id: 3)
 
 p77.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/77.png"), filename: "77.png")
 
@@ -1089,8 +1089,8 @@ p78 = Product.create!(
 )
 
 
-ProductCategory.create!(product_id: 78, category_id: 1)
-ProductCategory.create!(product_id: 78, category_id: 6)
+ProductCategory.create!(product_id: 78, category_id: 5)
+ProductCategory.create!(product_id: 78, category_id: 3)
 
 p78.photo.attach(io: open("https://printsy-dev.s3-us-west-1.amazonaws.com/seed/78.png"), filename: "78.png")
 
