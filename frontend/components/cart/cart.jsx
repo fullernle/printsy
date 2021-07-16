@@ -219,7 +219,7 @@ export default class Cart extends Component {
     );
   }
 
-  renderNonEmpty() {
+  renderNonEmpty(products) {
     return (
       <div className="cart-wrapper">
         <header className="cart-header">
