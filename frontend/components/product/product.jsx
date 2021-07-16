@@ -17,22 +17,25 @@ export default class Product extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.id).then(() => {
-			this.props.currentUser ? 
-				this.setState({
-					product_id: this.props.product.id,
-					cart_id: this.props.cart.id,
-				}) : 
-				this.setState({
-					product_id: this.props.product.id
-				})
+      this.props.currentUser
+        ? this.setState({
+            product_id: this.props.product.id,
+            cart_id: this.props.cart.id,
+          })
+        : this.setState({
+            product_id: this.props.product.id,
+          });
     });
   }
 
   addToCart() {
     const { openModal, currentUser } = this.props;
-		console.log(this.state);
-		const cartItem = Object.assign({}, this.state);
-    currentUser ? this.props.addItemToCart(cartItem) : openModal("requireLogin");
+    const cartItem = Object.assign({}, this.state);
+    if (currentUser) {
+      this.props.addItemToCart(cartItem);
+    } else {
+      openModal("requireLogin");
+    }
   }
 
   convertPrice(price) {
@@ -47,7 +50,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-    const { product } = this.props;
+    const { product, cart } = this.props;
 
     let randomSales = Math.floor(Math.random() * 1000);
     let randomWants = Math.floor(Math.random() * 30);
@@ -55,6 +58,10 @@ export default class Product extends React.Component {
     if (!product) {
       return <h1 className="loading">Loading...</h1>;
     } else {
+      const itemExists = cart.products.findIndex(
+        (obj) => obj.id === product.id
+      );
+
       return (
         <div className="product-page">
           <div className="product-photo-wrapper">
@@ -105,9 +112,15 @@ export default class Product extends React.Component {
             </div>
 
             <div>
-              <button className="add-to-cart" onClick={this.addToCart}>
-                Add to Cart
-              </button>
+              {itemExists > -1 ? (
+                <button className="add-to-cart">
+                  This item is already in your cart!
+                </button>
+              ) : (
+                <button className="add-to-cart" onClick={this.addToCart}>
+                  Add to Cart
+                </button>
+              )}
             </div>
             <div className="product-wants">
               <img

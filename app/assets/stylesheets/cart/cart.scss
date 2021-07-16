@@ -1,0 +1,256 @@
+.cart-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cart-header > h3 {
+  font-size: 32px;
+  line-height: 36px;
+  padding-left: 12px;
+}
+
+.cart-header > a {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 24px;
+  transition: transform 100ms ease-out, background 150ms ease-out;
+}
+
+.cart-header > a:hover {
+  background-color: rgba(182, 182, 182, 0.541);
+  transform: scale(1.01);
+}
+
+.ind-seller-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 24px;
+  padding-left: 12px;
+}
+
+.ind-cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.non-checkout-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 350px;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.452);
+}
+
+.ind-seller-header > h4,
+.total-product-price,
+.price-total {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.total-product-price {
+  text-align: right;
+}
+
+.price-total > span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.contact,
+.mini-price {
+  font-size: 13px;
+  color: hsla(0, 0%, 50%, 0.979);
+}
+
+.checkout-wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 36%;
+  height: 280px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(34, 34, 34, 15%);
+}
+
+.detail-wrapper {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.cart-photo-wrapper {
+  width: 212px;
+  height: 160px;
+  overflow: hidden;
+	border-radius: 8px;
+	margin-right: 8px;
+}
+
+.cart-photo-wrapper > img {
+  max-height: 100%;
+	max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.fine-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.fine-details > p {
+  font-size: 16px;
+}
+
+.fine-details > a {
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fine-details > a:hover {
+  text-decoration: underline;
+}
+
+.quantitative-details {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.ind-quantity {
+  width: 80px;
+  height: 40px;
+  padding: 0 8px;
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 0 1px 12px 0 rgba(34, 34, 34, 20%);
+}
+
+.non-photo-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.price-total,
+.shipping {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-total {
+  margin-bottom: 12px;
+}
+
+.sub-total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid hsla(0, 0%, 50%, 0.452);
+  padding-top: 12px;
+  margin-bottom: 12px;
+}
+
+.shipping {
+  margin-bottom: 36px;
+}
+
+.shipping > span {
+  font-size: 16px;
+  color: green;
+}
+
+.bttn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 12px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 24px;
+  transition: transform 100ms ease-out, background 150ms ease-out;
+}
+
+.bttn:hover {
+  background-color: rgba(182, 182, 182, 0.541);
+  transform: scale(1.01);
+}
+
+.chkt {
+  background: black;
+  width: 95%;
+  color: white;
+  align-self: center;
+}
+
+.chkt:hover {
+  background-color: black;
+}
+
+.chkt:active {
+  background: rgb(67, 67, 67);
+}
+
+.rmv {
+  width: 80px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rmv:active {
+  background-color: rgba(70, 70, 70, 0.761);
+}
+
+.empty-cart {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 64px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-cart > h2 {
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 12px;
+}
+
+.empty-cart > a {
+  text-decoration: underline;
+  color: rgb(34, 34, 34);
+  font-size: 16px;
+  margin-bottom: 64px;
+}
+.empty-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.fas {
+  margin-right: 8px;
+}

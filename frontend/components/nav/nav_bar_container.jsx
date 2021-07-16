@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { logout, resetSessionErrors } from "../../actions/session_actions";
-import TopNav from "./top_nav";
+import NavBar from "./nav_bar";
 
 const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.currentUserId],
@@ -17,4 +17,4 @@ const mDTP = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(mSTP, mDTP)(TopNav);
+export default connect(mSTP, mDTP)(NavBar);

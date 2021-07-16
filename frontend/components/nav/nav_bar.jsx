@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import SearchBar from "./search_bar";
 import DropDown from "./dropdown";
 
-const TopNav = ({ currentUser, logout, openModal }) => {
+const NavBar = ({ currentUser, logout, openModal }) => {
   const login_button = () => (
     <nav className="login-signup">
       <button className="login nav-bttn" onClick={() => openModal("login")}>
@@ -55,6 +55,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Fashion
         </NavLink>
+				
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -63,6 +64,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Games
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -71,6 +73,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Home
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -79,6 +82,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Accesories
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -87,6 +91,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Toys
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -95,6 +100,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Entertainment
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -103,6 +109,7 @@ const TopNav = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Art
         </NavLink>
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"
@@ -116,4 +123,4 @@ const TopNav = ({ currentUser, logout, openModal }) => {
   );
 };
 
-export default TopNav;
+export default NavBar;
