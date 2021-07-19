@@ -26,6 +26,7 @@ export default class Product extends React.Component {
             product_id: this.props.product.id,
           });
     });
+		this.props.fetchReviews(this.props.match.params.id)
   }
 
   addToCart() {

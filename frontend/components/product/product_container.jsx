@@ -4,6 +4,7 @@ import Product from "./product";
 import { openModal } from "../../actions/modal_actions";
 import { addItemToCart } from "../../actions/cart_action";
 import { filterCart } from "../../util/cart_util";
+import { fetchReviews } from "../../actions/review_action";
 
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUserId,
@@ -16,6 +17,7 @@ const mDTP = (dispatch) => ({
   fetchProducts: () => dispatch(fetchProducts()),
   addItemToCart: (item) => dispatch(addItemToCart(item)),
   openModal: (modal) => dispatch(openModal(modal)),
+  fetchReviews: (productId) => dispatch(fetchReviews(productId)),
 });
 
 export default connect(mSTP, mDTP)(Product);

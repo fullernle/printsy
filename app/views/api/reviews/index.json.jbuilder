@@ -1,3 +1,4 @@
+puts "HELLO THIS IS THE REVIEWS"
 puts @reviews
 @reviews.each do |review|
   json.set! review.id do
