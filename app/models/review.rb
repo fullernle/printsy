@@ -11,10 +11,9 @@
 #  updated_at  :datetime         not null
 #
 class Review < ApplicationRecord
+  validates :rating, :body, presence: true
 
-  belongs_to :reviewer, 
-    foreign_key: :reviewer_id, 
-    class_name: :User 
+  belongs_to :reviewer, foreign_key: :reviewer_id, class_name: :User
 
   belongs_to :product
 end

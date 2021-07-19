@@ -12,15 +12,8 @@ const ProductListing = ({ product, className }) => (
           alt={product.description}
         />
       </div>
-      <div className="list-product-name">
-        {product.name}
-      </div>
-      <div
-      
-        className="list-product-seller"
-      >
-        {product.seller}
-      </div>
+      <div className="list-product-name">{product.name}</div>
+      <div className="list-product-seller">{product.seller}</div>
       <div className="list-product-price">
         {Number.parseFloat(product.price).toFixed(2)}
       </div>

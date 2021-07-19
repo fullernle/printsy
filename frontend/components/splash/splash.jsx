@@ -10,8 +10,8 @@ class Splash extends React.Component {
 
     this.state = {
       special: [],
-      discover: []
-    }
+      discover: [],
+    };
 
     this.generateSpecial = this.generateSpecial.bind(this);
     this.generateRandom = this.generateRandom.bind(this);

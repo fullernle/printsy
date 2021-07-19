@@ -14,17 +14,16 @@ export default class DropDown extends React.Component {
 
   showMenu(e) {
     e.preventDefault();
-    let newState = !this.state.menuHidden
+    let newState = !this.state.menuHidden;
     this.setState({ menuHidden: newState });
   }
 
   closeMenu(e) {
     e.preventDefault();
-    this.setState({ menuHidden: true })
+    this.setState({ menuHidden: true });
   }
 
   componentDidUpdate() {
-
     setTimeout(() => {
       if (this.state.menuHidden === true) {
         window.removeEventListener("click", this.closeMenu);
@@ -32,11 +31,10 @@ export default class DropDown extends React.Component {
         window.addEventListener("click", this.closeMenu);
       }
     }, 0);
-
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.closeMenu);
+    window.removeEventListener("click", this.closeMenu);
   }
 
   render() {
