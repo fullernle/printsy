@@ -58,9 +58,13 @@ export default class Product extends React.Component {
     if (!product) {
       return <h1 className="loading">Loading...</h1>;
     } else {
-      const itemExists = cart.products.findIndex(
-        (obj) => obj.id === product.id
-      );
+			let itemExists = -1;
+			if (this.props.cart) {
+				 itemExists = cart.products.findIndex(
+           (obj) => obj.id === product.id
+         );
+			}
+     
 
       return (
         <div className="product-page">
