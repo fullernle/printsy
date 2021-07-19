@@ -11,6 +11,7 @@ Rails
       resources :categories, only: %i[index show]
       resources :carts, only: %i[show create]
       resources :cart_items, only: %i[index create update destroy show]
+			resources :reviews, only: %i[index create update destroy show]
     end
 
     root to: 'static_pages#root'

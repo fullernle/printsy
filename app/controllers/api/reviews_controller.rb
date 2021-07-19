@@ -1,9 +1,9 @@
 class Api::ReviewsController < ApplicationController
-	before_action :require_logged_in, except: {:index}
+	# before_action :require_logged_in, except: [:index]
 
 	def index 
-		@reviews = Review.find_by(product_id: review_params[:product_id])
-
+		# @reviews = Review.find_by(product_id: review_params[:product_id])
+		@reviews = Review.all
 		render :index
 	end
 
@@ -32,6 +32,22 @@ class Api::ReviewsController < ApplicationController
 				render json: @review.errors.full_messages, status: 422 
 			end
 		end
+	end
+
+	def destroy 
+		@review = Review.find(params[:id]) 
+		user = current_user 
+
+		if @review.reviewer_id != user.id 
+			render json: ["You are not the owner of this review!"], status: 422
+		else 
+			if @review && @review.delete
+				render :index 
+			else 
+				render json: @review.errors.full_messages, status: 422 
+			end
+		end
+	end
 
 	
 	private 
