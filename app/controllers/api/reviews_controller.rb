@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-	# before_action :require_logged_in, except: [:index]
+	before_action :require_logged_in, except: [:index]
 
 	def index 
 		@reviews = Review.all
