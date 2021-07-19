@@ -46,7 +46,7 @@ class Api::ReviewsController < ApplicationController
 			render json: ["You are not the owner of this review!"], status: 422
 		else 
 			if @review && @review.delete
-				render :index 
+				render :delete
 			else 
 				render json: @review.errors.full_messages, status: 422 
 			end
