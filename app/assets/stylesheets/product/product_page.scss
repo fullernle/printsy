@@ -18,6 +18,11 @@
   }
 }
 
+.product-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .product-photo-wrapper {
   max-width: 794px;
   max-height: 595px;
