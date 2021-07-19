@@ -2,8 +2,12 @@ class Api::ReviewsController < ApplicationController
 	# before_action :require_logged_in, except: [:index]
 
 	def index 
-		# @reviews = Review.find_by(product_id: review_params[:product_id])
 		@reviews = Review.all
+		render :index
+	end
+
+	def show 
+		@reviews = Review.find_by(product_id: review_params[:product_id])
 		render :index
 	end
 
