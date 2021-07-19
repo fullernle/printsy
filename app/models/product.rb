@@ -30,4 +30,6 @@ class Product < ApplicationRecord
     class_name: :CartItem
   
   has_one_attached :photo 
+
+	has_many :reviews
 end
