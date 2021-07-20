@@ -17,7 +17,7 @@ const App = () => (
     </header>
 
     <Switch>
-			<ProtectedRoute path="/carts/:id" component={CartContainer} />
+      <ProtectedRoute path="/carts/:id" component={CartContainer} />
       <Route path="/categories/:id" component={CategoryContainer} />
       <Route path="/products/:id" component={ProductContainer} />
       <Route exact path="/" component={SplashContainer} />

@@ -1,11 +1,11 @@
 class Api::CategoriesController < ApplicationController
-  def index 
-    @categories = Category.all 
+  def index
+    @categories = Category.all
     render :index
   end
-  
-  def show 
+
+  def show
     @category = Category.find(params[:id])
-    render "api/categories/show"
+    render 'api/categories/show'
   end
 end

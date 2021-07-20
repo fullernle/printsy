@@ -1,14 +1,15 @@
 class Api::ProductsController < ApplicationController
-  def index 
-    @products = Product.all 
+  def index
+    @products = Product.all
+
     # render "api/products/index"
     render :index
   end
 
-  def create 
-    @product = Product.new(product_params) 
+  def create
+    @product = Product.new(product_params)
 
-    if @product.save 
+    if @product.save
       # render "api/products/show"
       render :show
     else
@@ -16,20 +17,22 @@ class Api::ProductsController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @product = Product.find(params[:id])
 
-    if @product 
+    if @product
       # render "api/products/show"
       render :show
-    else 
+    else
       render json: @product.errors.full_messages, status: 422
     end
   end
 
-  private 
+  private
 
-  def product_params 
-    params.require(:product).permit(:name, :description, :price, :seller_id, :photo)
+  def product_params
+    params
+      .require(:product)
+      .permit(:name, :description, :price, :seller_id, :photo)
   end
 end

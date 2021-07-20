@@ -11,7 +11,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  processForm: (user) =>  dispatch(signup(user)),
+  processForm: (user) => dispatch(signup(user)),
   otherForm: (
     <button
       className="modal-change-form"

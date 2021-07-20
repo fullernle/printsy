@@ -11,8 +11,8 @@ export const showProduct = (productId) =>
     url: `/api/products/${productId}`,
   });
 
-export const allProducts = () => 
+export const allProducts = () =>
   $.ajax({
     method: "GET",
-    url: "/api/products"
-  })
+    url: "/api/products",
+  });

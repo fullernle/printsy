@@ -227,6 +227,8 @@ export default class Cart extends Component {
       return null;
     }
     const { products } = this.state;
-    return products.length > 0 ? this.renderNonEmpty(products) : this.renderEmpty();
+    return products.length > 0
+      ? this.renderNonEmpty(products)
+      : this.renderEmpty();
   }
 }

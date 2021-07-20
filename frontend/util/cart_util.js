@@ -31,12 +31,11 @@ export const updateItemInCart = (cartItem) =>
     data: { cart_item: cartItem },
   });
 
-
 export const filterCart = (carts, userId) => {
   for (const i in carts) {
     if (carts[i].user_id === userId) {
-			return carts[i]
+      return carts[i];
     }
   }
   return null;
-}
+};

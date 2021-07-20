@@ -12,9 +12,9 @@ const NavBar = ({ currentUser, logout, openModal }) => {
     </nav>
   );
 
-	const requireLogin = () => {
-		openModal("requireLogin");
-	}
+  const requireLogin = () => {
+    openModal("requireLogin");
+  };
 
   const cart_button = () => {
     if (currentUser) {
@@ -55,7 +55,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
           <div className="border-underline"></div>
           Fashion
         </NavLink>
-				
+
         <NavLink
           activeClassName="active-link"
           className="bottom-nav-link"

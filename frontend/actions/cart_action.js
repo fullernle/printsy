@@ -38,7 +38,7 @@ export const createCart = (userId) => (dispatch) =>
   );
 
 export const addItemToCart = (cartItem) => (dispatch) => {
-	console.log(cartItem);
+  console.log(cartItem);
   APIUtil.addItemToCart(cartItem).then(
     (cart) => dispatch(receiveCart(cart)),
     (err) => dispatch(receiveErrors(err.responseJSON))
