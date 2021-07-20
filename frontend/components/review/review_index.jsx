@@ -91,9 +91,19 @@ export default class ReviewIndex extends Component {
   }
 
   render() {
+    const { reviews } = this.props;
     return (
       <div className="review-index-container">
         {this.props.currentUser ? this.reviewForm() : null}
+
+        {reviews.map((review) => {
+          return (
+            <div key={`review-${review.id}`} className="review-wrapper">
+              <span>{review.rating}</span>
+              <p>{review.body}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }

@@ -6,10 +6,24 @@ import {
 } from "../../actions/review_action";
 import ReviewIndex from "./review_index";
 
+const filterReviews = (reviews, productId) => {
+  const currReviews = [];
+	reviews = Object.values(reviews);
+	
+  for (let i = 0; i < reviews.length; i++) {
+    console.log(reviews[i].product_id, parseInt(productId));
+    if (reviews[i].product_id === parseInt(productId)) {
+      currReviews.push(reviews[i]);
+    }
+  }
+
+  return currReviews;
+};
+
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUserId,
   errors: state.errors.reviews,
-  reviews: state.entities.reviews,
+  reviews: filterReviews(state.entities.reviews, ownProps.productId),
 });
 
 const mDTP = (dispatch) => ({
