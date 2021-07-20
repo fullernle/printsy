@@ -17,7 +17,7 @@ const filterReviews = (reviews, productId) => {
     }
   }
 
-  return currReviews;
+  return currReviews.reverse();
 };
 
 const mSTP = (state, ownProps) => ({

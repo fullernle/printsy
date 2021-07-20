@@ -20,6 +20,8 @@
 }
 
 .review-form-container {
+	width: 90%;
+	margin: 0 auto;
 	margin-bottom: 32px;
 }
 .review-form {
@@ -65,4 +67,46 @@
 
 .review-submit:active {
   background-color: $main-color;
+}
+
+.review-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 32px;
+}
+
+.review-header {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	font-size: 14px;
+	color: #595959;
+}
+
+.review-wrapper > section {
+	padding-left: 6%;
+}
+
+.review-wrapper > section > p {
+	font-size: 16px;
+}
+
+.user-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+  background: none;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  font: inherit;
+  outline: inherit;
+  border-radius: 50%;
+  transition: transform 100ms ease-out, background 150ms ease-out;
+	margin-right: 12px;
+}
+
+.review-date {
+	margin-left: 8px;
 }
