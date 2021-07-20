@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import Rating from "react-simple-star-rating";
+import StarIcon from "@material-ui/icons/Star";
+import { styled } from "@material-ui/core/styles";
+
+const MyStar = styled(StarIcon)({
+  color: "#222222",
+  width: "16px",
+  backgroundColor: "transparent",
+});
 
 export default class ReviewIndex extends Component {
   constructor(props) {
@@ -45,8 +53,6 @@ export default class ReviewIndex extends Component {
   reviewForm() {
     return (
       <div className="review-form-container">
-        <h3>Leave a review!</h3>
-
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit} className="review-form">
           <label className="review-rating-wrapper">
@@ -54,10 +60,11 @@ export default class ReviewIndex extends Component {
             <Rating
               onClick={this.handleRating}
               ratingValue={this.state.rating}
-              size={20}
+              size={18}
               transition
               fillColor="orange"
               emptyColor="gray"
+              className="review-rating"
             />
           </label>
 
@@ -94,12 +101,24 @@ export default class ReviewIndex extends Component {
     const { reviews } = this.props;
     return (
       <div className="review-index-container">
+        {this.props.currentUser ? (
+          <h3>Leave a review!</h3>
+        ) : (
+          <h3> Sign in to leave a review!</h3>
+        )}
+
         {this.props.currentUser ? this.reviewForm() : null}
 
         {reviews.map((review) => {
           return (
             <div key={`review-${review.id}`} className="review-wrapper">
-              <span>{review.rating}</span>
+              <header>
+                <span>{review.reviewer.charAt(0).toUpperCase()}</span>
+                {review.reviewer}
+              </header>
+              <span>
+                {Array(Math.floor(review.rating)).fill(<MyStar></MyStar>)}
+              </span>
               <p>{review.body}</p>
             </div>
           );
