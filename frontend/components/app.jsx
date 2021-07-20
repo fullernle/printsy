@@ -8,6 +8,7 @@ import CartContainer from "./cart/cart_container";
 import Modal from "./modal/modal";
 import ProductContainer from "./product/product_container";
 import NavBarContainer from "./nav/nav_bar_container";
+import SearchResultContainer from "./search/search_results_container";
 
 const App = () => (
   <>
@@ -19,6 +20,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/carts/:id" component={CartContainer} />
       <Route path="/categories/:id" component={CategoryContainer} />
+      <Route path='/search/query=":query"'component={SearchResultContainer} />
       <Route path="/products/:id" component={ProductContainer} />
       <Route exact path="/" component={SplashContainer} />
       <Redirect to="/" />

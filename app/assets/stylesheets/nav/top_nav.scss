@@ -12,10 +12,10 @@
     align-items: center;
   }
 
-  header {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+	.nav-wrapper {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
 
   .search-section {
     display: flex;
@@ -27,6 +27,8 @@
     justify-content: space-between;
     align-items: center;
   }
+
+	
 
   .search-bar {
     width: 90%;
@@ -102,7 +104,7 @@
     grid-area: placeholder;
   }
 
-  header {
+ 	.nav-wrapper {
     width: auto;
     margin: 0 auto;
   }
@@ -184,4 +186,14 @@
 .login {
   font-size: 13px;
   width: 72px;
+}
+
+.search-bttn:active {
+	background-color: $main-color;
+}
+
+.nav-bottom-border {
+	width: 100vw;
+	margin-bottom: 24px;
+	border-bottom: 2px solid rgba(182, 182, 182, 0.541);
 }
