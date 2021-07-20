@@ -33,23 +33,23 @@ export const resetErrors = () => ({
 export const fetchReviews = (productId) => (dispatch) =>
   APIUtil.fetchReviews(productId).then(
     (reviews) => dispatch(receiveReviews(reviews)),
-    (errors) => dispatch(receiveErrors(errors))
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const createReview = (review) => (dispatch) =>
   APIUtil.createReview(review).then(
     (review) => dispatch(receiveReview(review)),
-    (errors) => dispatch(receiveErrors(errors))
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const deleteReview = (reviewId) => (dispatch) =>
   APIUtil.deleteReview(reviewId).then(
     (review) => dispatch(deleteCurrentReview(review.id)),
-    (errors) => dispatch(receiveErrors(errors))
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
 
 export const updateReview = (review) => (dispatch) =>
   APIUtil.updateReview(review).then(
     (review) => dispatch(receiveReview(review)),
-    (errors) => dispatch(receiveErrors(errors))
+    (errors) => dispatch(receiveErrors(errors.responseJSON))
   );
