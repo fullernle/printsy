@@ -12,10 +12,10 @@
     align-items: center;
   }
 
-  header {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+	.nav-wrapper {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
 
   .search-section {
     display: flex;
@@ -104,7 +104,7 @@
     grid-area: placeholder;
   }
 
-  header {
+ 	.nav-wrapper {
     width: auto;
     margin: 0 auto;
   }
@@ -190,4 +190,9 @@
 
 .search-bttn:active {
 	background-color: $main-color;
+}
+
+.nav-bottom-border {
+	width: 100vw;
+	border-bottom: 2px solid rgba(182, 182, 182, 0.541);
 }
