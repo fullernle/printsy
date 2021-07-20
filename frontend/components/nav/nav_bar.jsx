@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import SearchBar from "./search_bar";
+import SearchBar from "../search/search_bar";
 import DropDown from "./dropdown";
 
 const NavBar = ({ currentUser, logout, openModal }) => {

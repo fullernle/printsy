@@ -28,6 +28,8 @@
     align-items: center;
   }
 
+	
+
   .search-bar {
     width: 90%;
     height: 80%;
@@ -184,4 +186,8 @@
 .login {
   font-size: 13px;
   width: 72px;
+}
+
+.search-bttn:active {
+	background-color: $main-color;
 }
