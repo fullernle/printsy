@@ -30,7 +30,8 @@ class Splash extends React.Component {
     this.props.fetchProducts().then(() => {
       this.setState({
         special: this.generateSpecial(),
-        popular: this.generateSpecial(),
+        popular: this.generateRandom(6),
+        discover: this.generateRandom(5),
       });
     });
   }
@@ -67,10 +68,10 @@ class Splash extends React.Component {
     return randomCategories;
   }
 
-  generateRandom() {
+  generateRandom(num) {
     let random = [];
 
-    while (random.length !== 6) {
+    while (random.length !== num) {
       let i = Math.floor(Math.random() * this.props.products.length);
       if (!random.includes(this.props.products[i])) {
         random.push(this.props.products[i]);
@@ -126,11 +127,17 @@ class Splash extends React.Component {
           </div>
 
           <div className="splash-discover">
+            <div className="discover-background"></div>
+            <div className="discover-text">
+              <h4>Editor's Picks</h4>
+              <h3>Print to your heart's content!</h3>
+              <p>Shop these unique finds</p>
+            </div>
             {this.state.discover === null
               ? ""
               : this.state.discover.map((product, i) => (
                   <SplashProduct
-                    className={`discover-item-link-${i + 1}`}
+                    className={`discover-item-link-${i + 1} discover-item`}
                     product={product}
                     index={i}
                     key={product.id}

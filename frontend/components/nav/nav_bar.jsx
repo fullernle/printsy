@@ -45,6 +45,13 @@ const NavBar = ({ currentUser, logout, openModal }) => {
 
           {currentUser ? dropdown_menu() : login_button()}
           {cart_button()}
+          <a className="nav-links" href="https://github.com/fullernle/printsy">
+            <i className="fab fa-github"></i>
+          </a>
+
+          <a className="nav-links" href="https://linkedin.com/in/fullernle">
+            <i className="fab fa-linkedin"></i>
+          </a>
         </nav>
 
         <nav className="bottom-nav">

@@ -9,6 +9,8 @@
   border-radius: 8px;
   padding: 8px 0;
   box-shadow: 0 4px 20px rgba(34, 34, 34, 15%);
+  animation: growDown 300ms ease-in-out forwards;
+	transform-origin: top center;
 }
 
 .nav-menu > div {
@@ -22,4 +24,16 @@
 .nav-menu > div:hover {
   width: 100%;
   background-color: rgba(182, 182, 182, 0.541);
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
