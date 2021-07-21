@@ -189,7 +189,7 @@ export default class Cart extends Component {
           <span>FREE</span>
         </div>
 
-        <button className="chkt bttn">Checkout</button>
+        <button className="chkt bttn" onClick={() => this.props.openModal("checkout")}>Checkout</button>
       </div>
     );
   }

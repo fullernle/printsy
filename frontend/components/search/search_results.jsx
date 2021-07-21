@@ -24,11 +24,17 @@ export default class SearchResults extends Component {
     return (
       <div className="results-wrapper">
         {results.length < 1 ? (
-          <h2 className="no-results">
-            We couldn't find any results for {this.props.query}
-          </h2>
+          <>
+            <div className="background-results"></div>
+            <h2 className="no-results">
+              We couldn't find any results for {this.props.query}
+            </h2>
+
+            <p>Try searching for something else instead?</p>
+
+          </>
         ) : (
-          <div className='results-list'>
+          <div className="results-list">
             {results.map((product) => {
               return (
                 <ProductListing

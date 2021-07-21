@@ -19,6 +19,18 @@ function Modal({ modal, closeModal }) {
     case "requireLogin":
       component = <div> Please login to continue! </div>;
       break;
+    case "checkout":
+      component = (
+        <div className="checkout-modal">
+          Thanks for <i>checking out</i> my work! 
+					<br />
+					<br />
+					All these items can be found
+          on <a href="https://thingiverse.com">thingiverse!</a>
+        </div>
+      );
+			break;
+
     default:
       return null;
   }

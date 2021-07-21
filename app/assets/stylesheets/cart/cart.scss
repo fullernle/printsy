@@ -38,6 +38,7 @@
   width: 100%;
   margin-top: 24px;
   padding-left: 12px;
+	margin-bottom: 12px;
 }
 
 .ind-cart-wrapper {
@@ -253,4 +254,21 @@
 
 .fas {
   margin-right: 8px;
+}
+
+.checkout-modal {
+	padding: 12px;
+	width: 400px;
+	height: 150px;
+	text-align: center;
+}
+
+.checkout-modal > i {
+	font-style: italic;
+	font-weight: 600;
+}
+
+.checkout-modal > a {
+	text-decoration: underline;
+	color: blue;
 }
