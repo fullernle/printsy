@@ -45,8 +45,13 @@ export default class DropDown extends React.Component {
         </button>
 
         {this.state.menuHidden ? null : (
-          <div className="nav-menu">
-            <button onClick={this.props.logout}>Logout</button>
+          <div className="nav-menu-wrapper">
+            <div className="nav-menu visible">
+              <div>Hi, {this.props.user.username}!</div>
+              <div className="logout-bttn" onClick={this.props.logout}>
+                Logout
+              </div>
+            </div>
           </div>
         )}
       </div>
