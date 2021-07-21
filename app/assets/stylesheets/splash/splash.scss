@@ -242,3 +242,60 @@
   font-weight: 500;
   margin-bottom: 12px;
 }
+
+.splash-discover {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.discover-item {
+  width: 250px;
+  height: 200px;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+.discover-item:hover {
+	box-shadow: 0px 0px 25px #595959;
+  cursor: pointer;
+}
+.discover-background {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  background-image: url("https://printsy-dev.s3.us-west-1.amazonaws.com/background-2.svg");
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1000;
+}
+
+.discover-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.discover-text > h4 {
+  font-size: 13px;
+  line-height: 18px;
+  color: #595959;
+}
+
+.discover-text > h3 {
+  font-size: 32px;
+  line-height: 36px;
+  color: #343434;
+	margin-top: 4px;
+	margin-bottom: 8px;
+}
+
+.discover-text > p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+}
