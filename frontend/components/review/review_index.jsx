@@ -45,7 +45,6 @@ export default class ReviewIndex extends Component {
     e.preventDefault();
     this.setState({ reviewer_id: this.props.currentUser }, () => {
       const review = Object.assign({}, this.state);
-      console.log(review);
       this.props.createReview(review);
 
       this.setState({

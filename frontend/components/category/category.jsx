@@ -20,7 +20,6 @@ export default class Category extends React.Component {
       this.getCategory();
       return <div className="loading">Loading...</div>;
     } else {
-      console.log("RETURN MAH PRODUCTS PLS");
       let products = Object.values(this.props.category.products);
 
       return (

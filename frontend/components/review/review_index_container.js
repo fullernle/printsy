@@ -11,7 +11,6 @@ const filterReviews = (reviews, productId) => {
 	reviews = Object.values(reviews);
 	
   for (let i = 0; i < reviews.length; i++) {
-    console.log(reviews[i].product_id, parseInt(productId));
     if (reviews[i].product_id === parseInt(productId)) {
       currReviews.push(reviews[i]);
     }
