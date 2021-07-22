@@ -9,6 +9,7 @@ import Modal from "./modal/modal";
 import ProductContainer from "./product/product_container";
 import NavBarContainer from "./nav/nav_bar_container";
 import SearchResultContainer from "./search/search_results_container";
+import Footer from "./footer/footer";
 
 const App = () => (
   <>
@@ -25,6 +26,12 @@ const App = () => (
       <Route exact path="/" component={SplashContainer} />
       <Redirect to="/" />
     </Switch>
+
+
+
+		<footer>
+			<Footer/>
+		</footer>
   </>
 );
 
