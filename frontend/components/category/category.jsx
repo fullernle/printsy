@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../loading/loading";
 import ProductListing from "../product/product_listing";
 export default class Category extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class Category extends React.Component {
   render() {
     if (!this.props.category) {
       this.getCategory();
-      return <div className="loading">Loading...</div>;
+      return Loading;
     } else {
       let products = Object.values(this.props.category.products);
 
