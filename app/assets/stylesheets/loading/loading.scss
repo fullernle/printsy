@@ -1,3 +1,13 @@
+@import "../variables.scss";
+
+.roller-container {
+	max-width: 1400px;
+	width: 1100px;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
 .lds-roller {
   display: inline-block;
   position: relative;
@@ -15,7 +25,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #fff;
+  background: $main-color;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

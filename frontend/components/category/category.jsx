@@ -19,7 +19,7 @@ export default class Category extends React.Component {
   render() {
     if (!this.props.category) {
       this.getCategory();
-      return Loading;
+      return Loading();
     } else {
       let products = Object.values(this.props.category.products);
 
