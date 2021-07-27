@@ -26,9 +26,6 @@ class Splash extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchCategories();
-    // this.props.fetchProducts().then(() => this.props.fetchCategories());
-		console.log(this.props.products);
     if (
       this.props.products.length < 1 
     ) {
@@ -100,7 +97,6 @@ class Splash extends React.Component {
     ) {
       return Loading();
     } else {
-      // console.log(this.props.products);
       return (
         <div className="splash-wrapper">
           {this.props.currentUser ? <GreetingContainer /> : ""}
