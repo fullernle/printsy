@@ -28,13 +28,24 @@ class Splash extends React.Component {
   componentDidMount() {
     // this.props.fetchCategories();
     // this.props.fetchProducts().then(() => this.props.fetchCategories());
-    this.props.fetchProducts().then(() => {
-      this.setState({
-        special: this.generateSpecial(),
-        popular: this.generateRandom(6),
-        discover: this.generateRandom(5),
+		console.log(this.props.products);
+    if (
+      this.props.products.length < 1 
+    ) {
+      this.props.fetchProducts().then(() => {
+        this.setState({
+          special: this.generateSpecial(),
+          popular: this.generateRandom(6),
+          discover: this.generateRandom(5),
+        });
       });
-    });
+    } else {
+			 this.setState({
+          special: this.generateSpecial(),
+          popular: this.generateRandom(6),
+          discover: this.generateRandom(5),
+       });
+		}
   }
 
   generateSpecial() {
@@ -83,9 +94,13 @@ class Splash extends React.Component {
   }
 
   render() {
-    if (!this.props.products || this.props.products.length < 1 || this.props.products === undefined) {
+    if (
+      this.props.products.length < 1 ||
+      this.props.products === undefined
+    ) {
       return Loading();
     } else {
+      // console.log(this.props.products);
       return (
         <div className="splash-wrapper">
           {this.props.currentUser ? <GreetingContainer /> : ""}
