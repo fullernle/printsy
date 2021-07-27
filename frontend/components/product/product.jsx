@@ -1,6 +1,7 @@
 import React from "react";
 import ProductDropDown from "./product_dropdown";
 import ReviewIndexContainer from "../review/review_index_container";
+import Loading from "../loading/loading"
 export default class Product extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +57,7 @@ export default class Product extends React.Component {
     let randomWants = Math.floor(Math.random() * 30);
 
     if (!product) {
-      return <h1 className="loading">Loading...</h1>;
+      return Loading();
     } else {
       let itemExists = -1;
       if (this.props.cart) {

@@ -3,6 +3,7 @@ import SplashProduct from "./splash_product";
 import GreetingContainer from "../home/greeting_container";
 import SplashCategory from "./splash_category";
 import ProductListing from "../product/product_listing";
+import Loading from "../loading/loading";
 
 class Splash extends React.Component {
   constructor(props) {
@@ -82,8 +83,8 @@ class Splash extends React.Component {
   }
 
   render() {
-    if (!this.props.products) {
-      return <h1 className="loading">Loading...</h1>;
+    if (!this.props.products || this.props.products.length < 1 || this.props.products === undefined) {
+      return Loading();
     } else {
       return (
         <div className="splash-wrapper">
